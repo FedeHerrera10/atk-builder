@@ -50,7 +50,7 @@ use Sintattica\Atk\Session\SessionManager;
     {
       	//parent::___construct("setup");
       	$ip=$_SERVER['REMOTE_ADDR'];
-  		$ips_allowed=split(":",Config::getGlobal("setup_allowed_ips"));
+  		$ips_allowed=explode(":",Config::getGlobal("setup_allowed_ips"));
   
   		if (!Tools::atk_in_array($ip, $ips_allowed) ) 
   		{
