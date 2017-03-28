@@ -52,7 +52,7 @@
     </command>
     <command>
     	<name>newapp</name>
-    	<description>Create a new atk Application.</description>
+    	<description>Creates a new ATK Application.</description>
     	<argument name='appnme'>
     		<description>The new application name</description>
     	</argument>
