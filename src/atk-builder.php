@@ -1,6 +1,18 @@
 <?php
-require_once dirname(__FILE__). DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 
+$autoload =    dirname(__FILE__). DIRECTORY_SEPARATOR.
+                        '..'.DIRECTORY_SEPARATOR.
+                        'vendor'.DIRECTORY_SEPARATOR.
+                        'autoload.php';
+if (!file_exists($autoload))
+{
+    $autoload =    dirname(__FILE__). DIRECTORY_SEPARATOR.
+                            '..'.DIRECTORY_SEPARATOR.
+                            '..'.DIRECTORY_SEPARATOR.
+                            'vendor'.DIRECTORY_SEPARATOR.
+                            'autoload.php';
+}
+require $autoload;
 
 use atkbuilder\Config;
 use atkbuilder\BuilderDirector;
