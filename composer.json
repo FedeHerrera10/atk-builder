@@ -5,7 +5,7 @@
 	"require" : {
 		"pear2/console_commandline" : "^0.2.1"
 	},
-	"name" : "sanotto/atk-builder-2.0.0",
+	"name" : "sanotto/atk-builder",
 	"description" : "Code generator tool for the ATK Framework",
 	"type" : "atk-tool",
 	"homepage" : "https://github.com/sanotto/atk-builder",
