@@ -13,7 +13,7 @@ $xmlfile = dirname(__FILE__) .
 			DIRECTORY_SEPARATOR .
 			'..'.
 			DIRECTORY_SEPARATOR .
-                        'resources'
+                                                'resources'
 			. DIRECTORY_SEPARATOR .
 			'cmdlne'
 			. DIRECTORY_SEPARATOR .
@@ -23,7 +23,7 @@ $cmdLineParser = PEAR2\Console\CommandLine::fromXmlFile($xmlfile);
 
 try 
 {
-	$cmdlne = $cmdLineParser->parse();
+    $cmdlne = $cmdLineParser->parse();
 }
 catch (Exception $exc)
 {
@@ -32,9 +32,9 @@ catch (Exception $exc)
 }
 
 $cfg = new Config($cmdlne);
-$cfg->logger =  new SysLogger($cmdlne->options['verbose']);
+$verbose = $cmdlne->options['verbose'] ?? 0;
+$cfg->syslog =  new SysLogger($verbose);
 $cfg->cpbdir=dirname(dirname(__FILE__));
-
 
 try 
 {
@@ -45,6 +45,7 @@ try
 }
 catch (Exception $exc)
 {
+    
     print($exc->getMessage()."\n");
     exit(1);
 }

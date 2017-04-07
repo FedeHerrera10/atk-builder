@@ -1,3 +1,5 @@
+# DefFile 
+
 appnme:${appnme}
 db:${dbnme}:${dbusr}:${dbpas}
 
@@ -9,6 +11,7 @@ module:Security
 		firstname
 		lastname
 		email
+                is_admin::BoolAttribute
 		disabled::BoolAttribute
 		
 	node:Groups

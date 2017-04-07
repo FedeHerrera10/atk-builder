@@ -4,25 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0ff3d58d32106df881c06e4d763db436",
-    "content-hash": "99c39bcf62d2464eea96ee090495d9fb",
+    "content-hash": "78fa098794cf940066899c11f9d1e927",
     "packages": [
         {
             "name": "pear2/console_commandline",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear2/Console_CommandLine.git",
-                "reference": "4a356864f88cdac79bcb656e54d0563c2fc7997d"
+                "reference": "0f4e219865e16425a2a1bed6fe307e00b992644d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear2/Console_CommandLine/zipball/4a356864f88cdac79bcb656e54d0563c2fc7997d",
-                "reference": "4a356864f88cdac79bcb656e54d0563c2fc7997d",
+                "url": "https://api.github.com/repos/pear2/Console_CommandLine/zipball/0f4e219865e16425a2a1bed6fe307e00b992644d",
+                "reference": "0f4e219865e16425a2a1bed6fe307e00b992644d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-dom": "Required when parsing definitions from an XML file"
             },
             "type": "library",
             "autoload": {
@@ -41,9 +43,9 @@
                     "role": "helper"
                 },
                 {
-                    "name": "David Jean Louis",
+                    "name": "David JEAN LOUIS",
                     "email": "izi@php.net",
-                    "role": "Lead"
+                    "role": "lead"
                 },
                 {
                     "name": "Brett Bieber",
@@ -61,7 +63,7 @@
                 "parser",
                 "pear2"
             ],
-            "time": "2014-06-22 20:29:54"
+            "time": "2016-11-09T00:10:54+00:00"
         }
     ],
     "packages-dev": [],

@@ -28,11 +28,19 @@ class FsManager
 
         $folder = FsManager::normalizePath($folder);
         if(!file_exists($folder))
-        {
-            mkdir($folder,true);
-            chmod($folder,$auth);
-            FsManager::chown($folder,"www-data:www-data");
-            return false;
+        {            
+            $success=  mkdir($folder,true);            
+            if($success === true)
+            {
+                chmod($folder,$auth);
+                FsManager::chown($folder,"www-data:www-data");
+                return false;
+            }
+            else 
+            {
+                throw new Exception("Couldn't create directory:".$folder);
+            }
+            
         }
         return true;
     }
@@ -121,14 +129,24 @@ class FsManager
      * @param string $from The file to copy
      * @param \atkbuilder\sgtring $to The new file
      */
-    public static function copy(string $from, sgtring $to)
+    public static function copy(string $from, string $to)
     {
         $from = FsManager::normalizePath($from);
-        $to = FsManager::normalizePath($to);
-        $GLOBALS['syslog']->debug("Copying from:".$from." to:".$to,1);
-        $copy = " cp -R \"$from\" \"$to\"";
-        $GLOBALS['syslog']->debug($copy,2);
+        $to = FsManager::normalizePath($to);        
+        $copy = " cp -R \"$from\" \"$to\"";        
         system($copy);
+    }
+ /**
+     * Unlink a file.
+     * 
+     * @param string $file The file to unlimnk (Delete)
+     */
+    public static function unlink(string $file)
+    {
+        $file = FsManager::normalizePath($file);
+        $unlink = "rm  -f  \"$file\"";
+        
+        system($unlink);
     }
 
     /**
@@ -145,22 +163,20 @@ class FsManager
         {
             return symlink(readlink($source), $dest);
         }	
-
         // Simple copy for a file
         if (is_file($source)) 
         {
             return copy($source, $dest);
         }
-
         // Make destination directory
         if (!is_dir($dest)) 
         {
             mkdir($dest);
         }
-
         // Loop through the folder
+       
         $dir = dir($source);
-        while (false !== $entry = $dir->read()) 
+        while (false !== ($entry = $dir->read())) 
         {
             // Skip pointers
             if ($entry == '.' || $entry == '..') 
@@ -221,13 +237,15 @@ class FsManager
      */
     public static function filePutContents(string $file, string $contents)
     {
-        $file = FsManager::normalizePath($file);
-        $bytes_written=file_put_contents($file, $contents);
+        $file_normalized = FsManager::normalizePath($file);
+        $bytes_written=file_put_contents($file_normalized, $contents);
+        
         if ($bytes_written === false)
         {
-                throw new Exception("Could'nt write file:"+$file);
+                throw new Exception("Could'nt write file:".$file_normalized."(If --base-name specified, check base name)");
         }
-        chmod($file,0774);
+        
+        chmod($file_normalized,0774);
     }
     /**
      * Retrieves the contents of a file.
@@ -237,28 +255,7 @@ class FsManager
      */
     public static function fileGetContents(string $file):string
     {
-        //$file = FsManager::normalizePath($file);
-        
-        ///DIRTY CODE I don't fully understand WHY file_get_contents doesn't read the file when 
-        //the path is passed. This "search" works but I DO NOT LIKE IT
-        $target_file=basename($file);
-        
-        $dirstr = dirname($file);        
-        $dir = dir($dirstr);
-        $contents = "";
-        $contexto = stream_context_create(array('phar' =>
-                                            array('metadata' => array('user' => 'cellog')
-                                        )));
-        while (false !== $entry = $dir->read()) 
-        {
-            if ($entry == $target_file)
-            {
-                $fullname = 	$dirstr.DIRECTORY_SEPARATOR.$entry;
-                $GLOBALS['syslog']->debug("Fullname:".$fullname,3);
-                $contents = file_get_contents($fullname, false, $contexto);
-            }	
-
-        }
+        $contents = file_get_contents($file);       
         return $contents;
     }
  

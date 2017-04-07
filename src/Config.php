@@ -24,12 +24,15 @@ class Config
      * 
      * @param array $cmdlne The command line arguments.
      */
-    function __construct(array $cmdlne)
+    function __construct( \PEAR2\Console\CommandLine\Result $cmdlne)
     {
-        $this->config['cwd']=getcwd();
-        $this->config['basedir']=getcwd();
+        $basedir = FsManager::normalizePath($cmdlne->command->options['basedir'] ?? getcwd());         
+        $this->config['cwd']=getcwd();        
         $this->config['cmdlne']=$cmdlne;
+        $this->config['basedir']=$basedir;
+        $this->config['deffile']=$cmdlne->command->options['deffile'] ?? "DefFile";         
     }
+    
     /**
      * Magic method to return the value of $name from the configuration array.
      * 

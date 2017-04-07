@@ -70,10 +70,10 @@ class DataDictionary
      * @param string $def_file The path of the DefFile
      * @param array $config An array of configuration values.
      */
-    function __construct(string $def_file, array $config)
+    function __construct(string $def_file, Config $config)
     {
         $this->config = $config;
-        $this->config->log("Reading definition file:".$def_file);
+        $this->config->syslog->log("Reading definition file:".$def_file);
         $this->loadDefFile($def_file);
         $this->dd['lnglst']=array("es", "en");	
         $this->dd['dirnme'] = dirname($def_file);
@@ -82,12 +82,22 @@ class DataDictionary
     /**
      * Dumps de Data Dictionary array for inspection
      */
-    public function dumpDictionary()
+    public function DumpDictionary()
     {
         var_dump($this->dd);
     }
-	
+    
     /**
+     *  Retrieves the multi dimensional array that contains the Data Dictionary
+     *  @returns array A Data Dictionary
+     */
+    
+    public function GetDataDictionary()
+    {
+        return $this->dd;
+    }
+
+   /**
     * Load de definition file, throw away comments and call the
     * proper method as identified by the first "tag"
     * 
@@ -96,7 +106,7 @@ class DataDictionary
     */
     private function loadDefFile(string $file): bool
     {
-        $lines = get_file_lines($file);
+        $lines = $this->get_file_lines($file);
         foreach ($lines as $line)
         {			
             if( (substr(trim($line),0,1) != '#'   ) and 
@@ -125,7 +135,7 @@ class DataDictionary
     {
         if (!file_exists($file))
         {
-            $this->config->abort("Could'nt open file:".$file);
+            $this->config->syslog->abort("Could'nt open file:".$file);
         }
         $file_contents=file_get_contents($file);			
         $lines=explode("\n", $file_contents);
@@ -146,7 +156,7 @@ class DataDictionary
         }
         error_reporting(E_ALL ^ E_NOTICE);
         $tag=trim($tags[TA_TAG]);
-		
+        $this->config->syslog->debug("CurMod:".$this->cur_mod." CurNod:".$this->cur_nod." Tag:".$tag,5);
         switch ($tag) 
         {
             case 'appnme':
@@ -197,6 +207,7 @@ class DataDictionary
                 $this->dd['roles'][$tags[TA_ID]]['description']=$tags[TA_DESCRIPTION];
                 break;
             default: //atributos
+                $this->config->syslog->debug("CurMod:".$this->cur_mod." CurNod:".$this->cur_nod." Attribute =>:".$tag,5);
                 if ($tags[TAATR_ID] == '\node') 
                 {
                     $tags[TAATR_ID] = 'node';
@@ -205,29 +216,30 @@ class DataDictionary
                 if ( ($this->cur_mod == NULL) or ($this->cur_nod == NULL))
                 {
                     $this->config->syslog->abort("attribute needs to be in a node inside a module:".$tags[TAATR_ID]);
-                    $type= $tags[TAATR_TYPE];
-                    $params = $tags[TAATR_PARAMS];
-                    if ($type == "")
+                }
+                $type= $tags[TAATR_TYPE];
+                $params = $tags[TAATR_PARAMS];
+                if ($type == "")
+                {
+                    $suggested_type =$this->sugestType($tags[TAATR_ID]);
+                    $type=$suggested_type['type'];
+                    if ($suggested_type['params'] !="")
                     {
-                        $suggested_type =$this->sugestType($tags[TAATR_ID]);
-                        $type=$suggested_type['type'];
-                        if ($suggested_type['params'] !="")
-                        {
-                            if ($params!="") $params = $params." | ";
-                            $params= $params.$suggested_type['params'];
-                        }
-                    }	
-                    $tags[TAATR_DESCRIPTION]=trim($tags[TAATR_DESCRIPTION]);
-                    $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['description']=$tags[TAATR_DESCRIPTION];
-                    //To ease the language files generation every label is accumulated at the module level	
-                    $this->dd['modules'][$this->cur_mod]['languages'][]="'".$tags[TA_TAG]."' =>'".$this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TA_TAG]]['description']."', ";
-                    $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['type']=$type;
-                    $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['params']=$params;
-                    $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['tabs']=trim( $tags[TAATR_TABS]) =='' ? 'NULL':"'".trim($tags[TAATR_TABS]."'");
-                    //To ease the generation of module digital signature all attributes are acummulated 
-                    array_push($this->dd['modules'][$this->cur_mod]['attrs'],$this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes']);
-                    break;
-		}
+                        if ($params!="") $params = $params." | ";
+                        $params= $params.$suggested_type['params'];
+                    }
+                }	
+                $tags[TAATR_DESCRIPTION]=trim($tags[TAATR_DESCRIPTION]);
+                $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['description']=$tags[TAATR_DESCRIPTION];
+                //To ease the language files generation every label is accumulated at the module level	
+                $this->dd['modules'][$this->cur_mod]['languages'][]="'".$tags[TA_TAG]."' =>'".$this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TA_TAG]]['description']."', ";
+                $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['type']=$type;
+                $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['params']=$params;
+                $this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes'][$tags[TAATR_ID]]['tabs']=trim( $tags[TAATR_TABS]) =='' ? 'NULL':"'".trim($tags[TAATR_TABS]."'");
+                //To ease the generation of module digital signature all attributes are acummulated                     
+                array_push($this->dd['modules'][$this->cur_mod]['attrs'],$this->dd['modules'][$this->cur_mod]['nodes'][$this->cur_nod]['attributes']);
+                break;
+            
         }
     }
 	
