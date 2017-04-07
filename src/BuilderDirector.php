@@ -33,24 +33,45 @@ class BuilderDirector
     }
 	
     /**
-     * Initializes the application it implies:
+     * Creates a new atk-builder enabled application.
+     * It implies:
      * 
-     * - Creating the database
-     * - Writing configurations files
-     * - Adding a Setup module
-     * - Adding a Security modules
+     * - cloning atk-skeleton via composer
+     * - initializing the application with inzapp method    
      * 
      * @param array $config configuration array
      */
-    function inzapp(array $config)
+    function newapp(Config $config)
     {
-    	$config->syslog->enter();
+        $config->syslog->enter();
         $base_dir_raw = $config->cmdlne->command->options['basedir'];				
         $base_dir = FsManager::normalizePath($base_dir_raw);
         $config->syslog->debug("New App base_dir:".$base_dir,1);
         $appnme = $config->cmdlne->command->args['appnme'];		
+        $appcrt = new NewApp($config, $base_dir, $appnme);	    
+        $appcrt->Run();
+        $config->syslog->finish();		
+    }
+    /**
+     * Initializes the application it implies:
+     * 
+     * - Creating the database.
+     * - Create the versioning table
+     * - updating configurations files
+     * - Adding the Setup module
+     * - Creating a Default DefFile with security nodes definitions
+     *  -Running a rungen command to create de sources
+     * 
+     * @param array $config configuration array
+     */
+    function inzapp(Config $config)
+    {
+        $config->syslog->enter();
+        $base_dir = $config->basedir;
+        $config->syslog->debug("New App base_dir:".$base_dir,1);
+        $appnme = $config->cmdlne->command->args['appnme'];		
         $appcrt = new InzApp($config, $base_dir, $appnme);	    
-        $appcrt->build();
+        $appcrt->Run();
         $config->syslog->finish();		
     }
 	
@@ -59,14 +80,14 @@ class BuilderDirector
      *
      * @param array $config configuration array
      */
-    function delapp(array $config)
+    function delapp(Config $config)
     {
-    	$config->syslog->enter();
+        $config->syslog->enter();
         $base_dir_raw = $config->cmdlne->command->options['basedir'];				
         $base_dir = FsManager::normalizePath($base_dir_raw);
         $appnme = $config->cmdlne->command->args['appnme'];		
         $appcrt = new DelApp($base_dir, $appnme);	    
-        $appcrt->build();
+        $appcrt->Run();
         $config->syslog->finish();		
     }
 	
@@ -76,25 +97,14 @@ class BuilderDirector
      * 
      * @param array $config configuration array
      */
-    function rungen(array $config)
+    function rungen(Config  $config)
     {
-    	$config->syslog->enter();
-    	$base_dir_raw = './';
-    	$def_file = 'DefFile';
-    	if (isset($config->cmdlne->command->options['basedir']))
-        {
-            $base_dir_raw = $config->cmdlne->command->options['basedir'];
-        }
-    	if (isset($config->cmdlne->command->options['deffile']))
-        {
-            $def_file = $config->cmdlne->command->options['deffile'];
-        }
-
-        $base_dir = FsManager::normalizePath($base_dir_raw);
-		 
-        $dict = new DataDictionary($def_file);
-        $builder = new RunGen($base_dir, $dict);
-        $builder->build();
+        $config->syslog->enter();
+        $def_file = $config->deffile;
+        $base_dir = $config->basedir;		 
+        $dict = new DataDictionary($def_file, $config);
+        $builder = new RunGen($config, $base_dir, $dict);
+        $builder->Run();
         $config->syslog->finish();		
     }
     
@@ -103,7 +113,7 @@ class BuilderDirector
      * 
      * @param type $config configuration array
      */
-    function dumpdd($config)
+    function dumpdd(Config $config)
     {
         $config->syslog->enter();
         $def_file = "./DefFile";
@@ -112,7 +122,7 @@ class BuilderDirector
              $def_file = $config->cmdlne->options['deffile']; 
         }
         $dict = new DataDictionary($def_file, $config);
-        $dict->dumpDictionary();
+        $dict->DumpDictionary();
         $config->syslog->finish();	
     }		
 }

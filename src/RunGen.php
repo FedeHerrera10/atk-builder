@@ -15,7 +15,7 @@ class RunGen extends AbstractCodeCreator
      * @access private
      * @var array
      */
-    private $config;
+    protected $config;
     /**
      * 
      * @param array $config The configuration array
@@ -24,18 +24,17 @@ class RunGen extends AbstractCodeCreator
      */
     public function __construct(Config $config, string $basedir, DataDictionary $dd)
     {
-        $this->config = $config;
-        
+        $this->config = $config;        
         $this->config->syslog->enter();
         $this->data_dict=$dd;
-        $this->dd=$dd->dd;
+        $this->dd=$dd->GetDataDictionary();
         $this->parent_node="Node";
-        $this->basedir=$basedir;	
+        $this->basedir= getcwd();	
         $this->modules_dir=$this->basedir.DS."src".DS."Modules";	
         $this->config->syslog->finish();
     }
     
-    public function build()
+    public function Run()
     {
         $this->config->syslog->enter();
         FsManager::ensureFolderExists($this->modules_dir);

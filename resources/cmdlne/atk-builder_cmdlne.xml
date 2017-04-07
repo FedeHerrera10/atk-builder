@@ -97,6 +97,52 @@
         </option>
     </command>
     <command>
+    	<name>inzapp</name>
+    	<description>Initializes a composer created ATK Application for use with atk-builder.</description>
+    	<argument name='appnme'>
+    		<description>The new application name</description>
+    	</argument>
+        <option name="dbname">
+	        <short_name>-d</short_name>
+	        <long_name>--db-name</long_name>
+	        <description>Database name.</description>	    
+        	<action>StoreString</action>
+        </option>
+         <option name="dbhost">
+	        <short_name>-h</short_name>
+	        <long_name>--db-host</long_name>
+	        <description>Database host.</description>
+	        <default>localhost</default>	    
+        	<action>StoreString</action>
+        </option>
+        <option name="dbuser">
+	        <short_name>-u</short_name>
+	        <long_name>--db-user</long_name>
+	        <description>Database user with administrative privileges.</description>
+	        <default>root</default>	    
+        	<action>StoreString</action>
+        </option>
+        <option name="dbpass">
+	        <short_name>-p</short_name>
+	        <long_name>--db-passwd</long_name>
+	        <description>Database password.</description>	    
+        	<action>Password</action>
+        </option>
+        <option name="appass">
+	        <short_name>-a</short_name>
+	        <long_name>--app-passwd</long_name>
+	        <description>Application password (Defaults to demo).</description>	    
+        	<action>Password</action>
+        </option>
+        <option name="basedir">
+	        <short_name>-b</short_name>
+	        <long_name>--base-dir</long_name>
+	        <description>Folder in which the application to be deleted resides in.</description>
+	        <default>./</default>	    
+        	<action>StoreString</action>
+        </option>
+    </command>
+    <command>
     	<name>rungen</name>
     	<description>
     		Run the code generator to generate or re generate the application.This is the default action.</description>

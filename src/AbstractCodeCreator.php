@@ -24,14 +24,14 @@ abstract class AbstractCodeCreator
      */
     protected  function createFromTemplate(string $resource, array $record, string $destination)
     {
-        $GLOBALS['syslog']->enter();
-        $GLOBALS['syslog']->debug("Creating:".$resource." at:".$destination,2);
-        $GLOBALS['syslog']->debug("Record:".var_export($record, true),4);
-        $contents = $this->getResource($resource);
-        $contents = $this->interpolate($record, $contents);
-        FsManager::filePutContents($destination,$contents);
-        $GLOBALS['syslog']->debug("Code generated for:".$destination."\n".$contents,4);
-        $GLOBALS['syslog']->finish();
+        $this->config->syslog->enter();
+        $this->config->syslog->debug("Creating:".$resource." at:".$destination,2);
+        $this->config->syslog->debug("Record:".var_export($record, true),4);
+        $contents_raw = $this->getResource($resource);
+        $contents = $this->interpolate($record, $contents_raw);                                
+        FsManager::filePutContents($destination,$contents);       
+        $this->config->syslog->debug("Code generated for:".$destination."\n".$contents,4);
+        $this->config->syslog->finish();
     }
 
     /**
@@ -62,10 +62,12 @@ abstract class AbstractCodeCreator
      */
     protected  function getResource(string $resource): string
     {
-        $source=$GLOBALS['syscfg']->cpbdir."/resources/".$resource;
-                        $GLOBALS['syslog']->debug("Reading resource from:".$source, 2);
+        $source=$this->config->cpbdir.DIRECTORY_SEPARATOR.
+                        "resources".DIRECTORY_SEPARATOR.
+                        $resource;
+        $this->config->syslog->debug("Reading resource from:".$resource, 2);
         $content = FsManager::fileGetContents($source);
-                        $GLOBALS['syslog']->debug("Resource Read:".$resource, 4);
+        $this->config->syslog->debug("Resource Read:".$resource, 4);
         return $content;
     }
 
@@ -84,12 +86,35 @@ abstract class AbstractCodeCreator
             throw new Exception("Could not connect to database server with the supplied parameters. (User:".$this->dbuser." ,Pass:".$this->dbpass.")");
         }
         $result = mysqli_query($query);
-        $GLOBALS['syslog']->debug("ExecSql:".$query,1);
-        $row = null;
+        $this->config->syslog->debug("ExecSql:".$query,1);
+        $row = array();
         if ($result)
+        {
                 @$row = mysqli_fetch_array($result);
+        }
         mysqli_close($conn);
         return $row;
+    }
+    /**
+     * Creates a database
+     * 
+     * @param string $dbname The database name
+     * @return bool  true if succesfull
+     * @throws Exception
+     */
+    public function CreateDataBase(string $dbname):bool
+    {
+        $conn = new \mysqli($this->dbhost, $this->dbuser,$this->dbpass);
+        if ($conn->connect_error)
+        {
+            throw new Exception("Could'nt connect with database");
+        }
+        $query = "CREATE DATABASE $dbname;";
+        if($conn->query($query)==true )
+        {
+            return true;
+        }        
+        return false;
     }
 }
 ?>

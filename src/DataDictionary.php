@@ -70,10 +70,10 @@ class DataDictionary
      * @param string $def_file The path of the DefFile
      * @param array $config An array of configuration values.
      */
-    function __construct(string $def_file, array $config)
+    function __construct(string $def_file, Config $config)
     {
         $this->config = $config;
-        $this->config->log("Reading definition file:".$def_file);
+        $this->config->syslog->log("Reading definition file:".$def_file);
         $this->loadDefFile($def_file);
         $this->dd['lnglst']=array("es", "en");	
         $this->dd['dirnme'] = dirname($def_file);
@@ -82,12 +82,22 @@ class DataDictionary
     /**
      * Dumps de Data Dictionary array for inspection
      */
-    public function dumpDictionary()
+    public function DumpDictionary()
     {
         var_dump($this->dd);
     }
-	
+    
     /**
+     *  Retrieves the multi dimensional array that contains the Data Dictionary
+     *  @returns array A Data Dictionary
+     */
+    
+    public function GetDataDictionary()
+    {
+        return $this->dd;
+    }
+
+   /**
     * Load de definition file, throw away comments and call the
     * proper method as identified by the first "tag"
     * 
@@ -96,7 +106,7 @@ class DataDictionary
     */
     private function loadDefFile(string $file): bool
     {
-        $lines = get_file_lines($file);
+        $lines = $this->get_file_lines($file);
         foreach ($lines as $line)
         {			
             if( (substr(trim($line),0,1) != '#'   ) and 
@@ -125,7 +135,7 @@ class DataDictionary
     {
         if (!file_exists($file))
         {
-            $this->config->abort("Could'nt open file:".$file);
+            $this->config->syslog->abort("Could'nt open file:".$file);
         }
         $file_contents=file_get_contents($file);			
         $lines=explode("\n", $file_contents);

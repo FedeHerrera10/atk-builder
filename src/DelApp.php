@@ -40,7 +40,7 @@ class DelApp extends AbstractCodeCreator
      * Builds the new application in the base_dir passed to the creator
      * using the def file passed in the creator.
      */
-    public function build()
+    public function Run()
     {
         $this->config->syslog->enter();
         try
