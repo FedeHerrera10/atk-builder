@@ -77,7 +77,7 @@ abstract class AbstractCodeCreator
      * @param string $query The Query to be executed
      * @return array An array with result rows
      * @throws Exception
-     */
+     */    
     protected function execSQL(string $query): array
     {
         $conn = mysqli_connect($this->dbhost, $this->dbuser,$this->dbpass);

@@ -399,6 +399,7 @@ class RunGen extends AbstractCodeCreator
         $record['attlst']='';
         //In the template the attribute id is implicit so we declare it here
         $attuse=array('Attribute'=>'');
+        
         foreach ($node_contents['attributes'] as $at_name => $at_def)
         {
             $at_name=trim($at_name);

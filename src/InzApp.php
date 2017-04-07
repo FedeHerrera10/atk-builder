@@ -48,6 +48,7 @@ class InzApp extends AbstractCodeCreator
         $this->assertDatabaseNew();                
         $this->createDefFile();   
         $this->addSetupModule();
+        $this->addAtkBuilderNode();
         $this->deleteSkeletonModules();
         $this->deleteSkeletonProvidedSqlFile();
         $this->updateParametersDev();
@@ -71,6 +72,20 @@ class InzApp extends AbstractCodeCreator
                     'Modules'.DIRECTORY_SEPARATOR.
                     'Setup';        
         FsManager::copyr($from, $to) ;
+    }
+    /**
+     *  Copies the AtkBuilderNode class from resources/classes to app's src/Modules
+     */
+    private function addAtkBuilderNode()
+    {
+        $source=$this->config->cpbdir.DIRECTORY_SEPARATOR.
+                        "resources";
+        $from =$source.DIRECTORY_SEPARATOR.
+                    'classes'. \DIRECTORY_SEPARATOR .'AtkBuilderNode.php';        
+        $to =   $this->full_basedir.DIRECTORY_SEPARATOR.
+                    'src'.DIRECTORY_SEPARATOR.
+                    'Modules';        
+        FsManager::copy($from, $to) ;
     }
     /**
      *  Deletes the two atk-skeleton provided module App y Auth
@@ -125,21 +140,18 @@ class InzApp extends AbstractCodeCreator
      */
     private function updateParametersDev()
     {
-        $config_file = $this->full_basedir.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'parameters.dev.php';
-        $config_contents = FsManager::fileGetContents($config_file);
-        //Update app identifier
-        $config_contents = $this->replace_entry($config_contents, "identifier", $this->appnme);
-        //Update database t
-        $config_contents = $this->replace_entry($config_contents, "db", $this->dbname);
-        //Update database host
-        $config_contents = $this->replace_entry($config_contents, "host", $this->dbhost);
-        //Update db user
-        $config_contents = $this->replace_entry($config_contents, "user", $this->dbuser);
-        //update db password
-        $config_contents = $this->replace_entry($config_contents, "password", $this->dbpass);        
-        //update Administrator password
         $password= password_hash($this->appass, PASSWORD_DEFAULT);        
-        $config_contents = $this->replace_entry($config_contents, "administratorpassword", $password);        
+        
+        $config_file = $this->full_basedir.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'parameters.dev.php';
+        
+        $config_contents = FsManager::fileGetContents($config_file);
+        $config_contents = $this->replace_entry($config_contents, "identifier", $this->appnme);
+        $config_contents = $this->replace_entry($config_contents, "db", $this->dbname);
+        $config_contents = $this->replace_entry($config_contents, "host", $this->dbhost);
+        $config_contents = $this->replace_entry($config_contents, "user", $this->dbuser);
+        $config_contents = $this->replace_entry($config_contents, "password", $this->dbpass);                        
+        $config_contents = $this->replace_entry($config_contents, "administratorpassword", $password);  
+        
         FsManager::filePutContents($config_file, $config_contents);
     }
     /**
@@ -223,10 +235,14 @@ class InzApp extends AbstractCodeCreator
         {
             throw new Exception("Database:".$dbname." allready exists");
         }
-        $query = "CREATE DATABASE ${dbname};";
-        $row = $this->execSQL($query);
+        $this->CreateDataBase($dbname);
         $query = "GRANT ALL ON ${dbname}.* TO `${dbname}`@`localhost` identified by '${dbname}';";
         $row = $this->execSQL($query);
+        
+         if ($row != false)
+        {
+            throw new Exception("Database:".$dbname." could not be created");
+        }
     }
 	
     /**

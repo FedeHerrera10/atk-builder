@@ -9,7 +9,7 @@ module:Security
 		firstname
 		lastname
 		email
-                                is_admin::BoolAttribute
+                is_admin::BoolAttribute
 		disabled::BoolAttribute
 		
 	node:Groups
