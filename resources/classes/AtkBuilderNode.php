@@ -33,16 +33,17 @@ class AtkBuilderNode extends Node
 		@$cur_filter = $a['cur_filter'];
 		$prev_filter = ($cur_view - 1 ) < 0 ? $max_filters : $cur_filter - 1;
 		$next_filter = ($cur_view + 1 ) > $max_filters ? 0 : $cur_filter + 1;
-		$bar=Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $prev_filter)),"<<")." ";
+		$bar=Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $prev_filter)),"<<",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'")." ";
 		for($i=0;$i <= $max_filters ;$i++)
 		{
-			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $i)),$this->admin_filters[$i][0])." ";
+			$style='btn btn-default';
 			if ($i == $cur_filter)
-				$a = "<b><i>".$a."</i></b>";
+				$style='btn btn-primary';
+			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $i)),$this->admin_filters[$i][0],SessionManager::SESSION_DEFAULT,false,"class='$style'")." ";
 			$bar.=$a;
 		}
-		$bar  .= Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $next_filter)),">>");
-		return "Mostrar: ".$bar;
+		$bar  .= Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $next_filter)),">>",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'");
+		return $bar;
 	}
 	
 	function getAdminViewBar()
@@ -53,16 +54,18 @@ class AtkBuilderNode extends Node
 		$cur_view = $this->getAdminView();
 		$prev_view = ($cur_view - 1 ) < 0 ? $max_views : $cur_view - 1;
 		$next_view = ($cur_view + 1 ) > $max_views ? 0 : $cur_view + 1;
-		$bar=Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $prev_view)),"<<")." ";
+		$bar=Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $prev_view)),"<<",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'")." ";
 		for($i=0;$i <= $max_views ;$i++)
 		{
-			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $i)),$i)." ";
+			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $i)),"Vista $i",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'")." ";
+			$style="btn btn-default";
 			if ($i == $cur_view)
-				$a = "<b><i>".$a."</i></b>";
+				$style="btn btn-primary";
+			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $i)),"Vista $i",SessionManager::SESSION_DEFAULT,false,"class='$style'")." ";
 			$bar.=$a;
 		}
-		$bar  .= Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $next_view)),">>");
-		return "Vistas: ".$bar;
+		$bar  .= Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $next_view)),">>", SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'");
+		return $bar;
 	}
 	
 	function getAdminView()
