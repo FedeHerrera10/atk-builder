@@ -544,7 +544,7 @@ class DbManager
 {
 	public function __construct($dd)
 	{
-		$GLOBALS['syslog']->enter();
+        	$this->config->syslog->enter();
 		$this->dd=$dd;
 		$database=$this->dd['db']['dbname'];
 		$user=$this->dd['db']['user'];
@@ -553,7 +553,7 @@ class DbManager
 		$port=$this->dd['db']['port'];
 		$charset=$this->dd['db']['charset'];
 		$this->doConnect($host, $user, $password, $database, $port, $charset);	
-		$GLOBALS['syslog']->finish();
+        	$this->config->syslog->finish();
 	}
  	
 	function doConnect($host, $user, $password, $database, $port, $charset)
@@ -561,7 +561,7 @@ class DbManager
 		if (empty($port)) $port = NULL;
        	$this->m_link_id = mysqli_connect($host, $user, $password, $database, $port);
        	if (!$this->m_link_id)
-       		$GLOBALS['syslog']->abort('Could not connect to database, reason:'.  mysql_error($this->m_link));
+       		$this->config->syslog->abort('Could not connect to database, reason:'.  mysql_error($this->m_link));
        	/* set character set */
        	if (!empty($charset))
 			$this->_query("SET NAMES '{$charset}'", true);
@@ -595,7 +595,7 @@ class DbManager
 		// table type
 		//$tableType = $this->_getTableType($table);
 		if (!$id)
-			$GLOBALS['syslog']->abort('Could not connect to database');
+			$this->config->syslog->abort('Could not connect to database');
 
 		
 		$result = array();
@@ -636,7 +636,7 @@ class DbManager
    	{
 		$id = @$this->_query("show tables like '{$prefix}%'; ", true);
 		if (!$id)
-			$GLOBALS['syslog']->abort('Could not connect to database');
+			$this->config->syslog->abort('Could not connect to database');
 		$i  = 0;
 		$result = array();
 		while ($tinfo = mysqli_fetch_array($id))
