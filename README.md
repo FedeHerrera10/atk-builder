@@ -9,20 +9,37 @@ It is said than a video is worth a thousand words, so here you have a (lousy) on
 [![Click to see video](http://img.youtube.com/vi/9N_qECiHCAg/0.jpg)](http://www.youtube.com/watch?v=9N_qECiHCAg)
 
 ### Installing
-Grab the atk-builder.phar file from the releases pages and the make it executable.
-In an standard linux system, place yourself in the directory where you have donwloaded the atk-builder.phar file and execute te following commands:
 
-- sudo chmod +x atk-builder.phar
-- sudo mv atk-builder.phar /usr/local/bin/atk-builder
+Create a new atk-skeleton project with:
 
-Now you can invoke atk-builder like this:
+```
+composer project-create sintattica/atk-skeleton myproject
+```
 
-- atk-builder
+The run composer update with:
 
-You can read the built in help with :
+```
+composer update
 
-- atk-builder --help
+```
 
+Once all the software components are updated, initialize the application with:
+
+```
+vendor\bin\atk-builder inzapp --db-name=myproject --db-user=youruser --db-passwd=yourdbpass
+
+```
+
+With the application initialized, you can start a local web server to serve the project with:
+
+
+```
+cd myproject
+php -S localhost:8080 -t web
+
+```
+Now you can point your browser to http:\\localhost:8080 and enter the aplication with user `administrato` password `demo`.
+After loggin in, please run the **Setup** option to create the required databases objects.
 
 ### How does it works?
 The idea behind atk-builder is to write the minimun possible to have a fully functional ATK application.
