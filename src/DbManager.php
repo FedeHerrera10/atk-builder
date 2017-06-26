@@ -542,8 +542,9 @@ define ('MYSQLI_REPORT_OFF', 0);
 
 class DbManager
 {
-	public function __construct($dd)
+	public function __construct($dd, $config)
 	{
+		$this->config=$config;
         	$this->config->syslog->enter();
 		$this->dd=$dd;
 		$database=$this->dd['db']['dbname'];

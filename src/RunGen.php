@@ -173,7 +173,7 @@ class RunGen extends AbstractCodeCreator
             $this->config->syslog->log("Patch file generation disabled, please fill db data in def:".$node,0);
             return $record;
         }	
-        $db = new DbManager($this->dd);	
+        $db = new DbManager($this->dd,$this->config);	
         $tables = $db->tablesForPrefix($module_name);
         //... Node/table in Model but not in Db => New node to install
         foreach ($module_contents['nodes'] as $node => $node_def)
