@@ -22,5 +22,6 @@
 		"psr-4" : {
 			"atkbuilder\\" : "src"
 		}
-                }
+  },
+  "bin": ["bin/atk-builder"],
 }
