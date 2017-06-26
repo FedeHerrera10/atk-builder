@@ -1,6 +1,6 @@
 {
 	"bin" : [
-		"src/atk-builder.php"
+    "bin/atk-builder"
 	],
 	"require" : {
 		"pear2/console_commandline" : "^0.2.1"
@@ -22,6 +22,5 @@
 		"psr-4" : {
 			"atkbuilder\\" : "src"
 		}
-  },
-  "bin": ["bin/atk-builder"],
+  }
 }
