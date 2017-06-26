@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-php atk-builder.php $@
+DIR="`dirname $0`"
+php $DIR/../src/atk-builder.php $@
+
+
