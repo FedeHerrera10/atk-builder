@@ -1,18 +1,24 @@
 <?php
 
-$autoload =    dirname(__FILE__). DIRECTORY_SEPARATOR.
-                        '..'.DIRECTORY_SEPARATOR.
-                        'vendor'.DIRECTORY_SEPARATOR.
-                        'autoload.php';
-if (!file_exists($autoload))
+$builder_dir = dirname(__FILE__). DIRECTORY_SEPARATOR;
+$levels = 0;
+$step_back='';
+$autoload_found=false;
+for ($i=0;$i<10;$i++)
 {
-    $autoload =    dirname(__FILE__). DIRECTORY_SEPARATOR.
-                            '..'.DIRECTORY_SEPARATOR.
-                            '..'.DIRECTORY_SEPARATOR.
-                            'vendor'.DIRECTORY_SEPARATOR.
-                            'autoload.php';
+  $step_back .= '..'.DIRECTORY_SEPARATOR;
+  $autoload = $builder_dir.$step_back. 
+              'vendor'.DIRECTORY_SEPARATOR.
+               'autoload.php';
+  if (file_exists($autoload))
+  {
+    require $autoload;
+    $autoload_found = true;
+    break;
+  }
 }
-require $autoload;
+
+if(!$autoload_found) die ("Could'nt found autoload");
 
 use atkbuilder\Config;
 use atkbuilder\BuilderDirector;
