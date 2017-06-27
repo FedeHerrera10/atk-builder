@@ -20,10 +20,11 @@ composer update
 
 ```
 
-Once all the software components are updated, initialize the application with:
+Once all the software components are updated, from **outside** of the project directory,
+initialize the application with:
 
 ```
-vendor\bin\atk-builder inzapp --db-name=myproject --db-user=youruser --db-passwd=yourdbpass
+./myproject/vendor/bin/atk-builder inzapp myproject --db-name=myproject --db-user=youruser --db-passwd=yourdbpass
 
 ```
 
@@ -35,17 +36,17 @@ cd myproject
 php -S localhost:8080 -t web
 
 ```
-Now you can point your browser to http:\\localhost:8080 and enter the aplication with user `administrato` password `demo`.
+Now you can point your browser to http:\\localhost:8080 and enter the aplication with user `administrator` password `demo`.
 After loggin in, please run the **Setup** option to create the required databases objects.
 
 ### How does it works?
 The idea behind atk-builder is to write the minimun possible to have a fully functional ATK application.
-An ATK application is built around modules, nodes and attributes, you normally make a folder inside the modules folders and populate that folder with classes derived from the **Node.class**, that node will correspond to a database table. In the node class you declare the table and add an attribute for every column, any time you change the table structure you have to fix the node class to reflect the changes,  the process, albeit simple, is time consuming.
+An ATK application is built around modules, nodes and attributes, you normally make a folder inside the modules folders and populate that folder with classes derived from the **Node.class**, that node will correspond to a database table. In the node class you declare the table and add an attribute for every column in the table, any time you change the table structure you have to fix the node class to reflect the changes,  the process, albeit simple, is time consuming.
 Atk-builder let's you avoid a lot of work, atk-builder let's you declare a simple text file called by default **DefFile** wich contains definitions about the modules, nodes and attributes that comprises an ATK application.
 After parsing this **DefFile** atk-builder will:
 
 - Create or Drop the required tables.
-- Add or Drop the required columns to the table.
+- Add or Drop the required columns to the tables.
 - Write or Re-write the required code for the Module/s class/es and / or the node/s class/es.
 
 A simple **DefFile** look like this:
@@ -62,20 +63,20 @@ module:payroll
 		notes
 ```
 
-It defines the application name (myapp) the database name (myappdb) the user and password of the database (root ans pass) it defines a module (payroll) wich contains a node (employees) wich have several attributes (name, date_of_birth, salary_ammount, notes)
+It defines the application name (myapp) the database name (myappdb) the user and password of the database (root and pass) it defines a module (payroll) wich contains a node (employees) wich have several attributes (name, date_of_birth, salary_ammount and  notes)
 
 Running atk-builder without any arguments looks for a file called **DefFile** in the current directory, running the tool with the previous definition will:
 
-- Create the payroll_employee tables if it not exists.
+- Create the payroll_employee tables if it not exists (Note that tables names are built in the form module_node).
 - If the table exists it will add or drop the corresponding columns in order to adjust the table to the definition.
 - Will create the Module folder.
-- Will create the necessary Module classes.
+- Will create the necessary Module class.
 - Will create the necessary Node classes.
 
 Modules and Node classes are created in pairs, a Node class for Employees will create two source files, one called Employees_base.php and another one called Employees.php, Employee extends Employee_base. Employee_base will be overwritten by
-Atk-builder each time it runs a **RUNGEN** command, but Employee.php will only be created jut once, Employee.php is the place where your validations and business rules must be expressed.
-The base classes will be rewritten each time the attributes list changes, attributes/columns types are infered using their names so date_of_birth will result in a column called data_of_birth with DATE type and an attribut of type DateAttribute.
-Not only the type is infered on the name, the flags are infered too, the name column will have a Attribute::AF_SEARCH flag because searching for a name is an obvious requirement it will have an Attribute::AF_OBLIGATORY as well, because obviously a name is allway required.
+Atk-builder each time it runs a **RUNGEN** command (RUNGEN is the default command, if you run /vendor/bin/atk-builder without any further arguments, it will run /vendor/bin/atk-builder rungen ), but Employee.php will only be created jut once, Employee.php is the place where your validations and business rules must be expressed.
+The base classes will be rewritten each time the attributes list changes, attributes/columns types are infered using their names so date_of_birth will result in a column called date_of_birth with DATE type and an attribut of type DateAttribute.
+Not only the type is infered on the name, the flags are infered too, the name column will have a Attribute::AF_SEARCH flag because searching for a name is an obvious requirement,  it will have an Attribute::AF_OBLIGATORY as well, because obviously a name is allway required.
 atk-builder will try to infer as much as possible on your **DefFile** but you can fine tune the code generation i.e:
 
 ```
@@ -115,8 +116,8 @@ The items between square brackets are optional, if ommited, proper values will b
 A brief discussion about the parameters follows:
 
 - label: If ommited the name for the Module/Node/Attribute will be used as label form Menus and/or form label.
-- actions: These are the registered actions for the node, if ommitted the standard action (admin, add, update, view and delete) will be used, if you need a non standard action, you have to declare all the standard action too if you need them, i.e. if you need a print_orde action besides the standard ones, declare **admin, add, update, view, print_order**
-- node_flags: The node flags you want for this node (see vendor/sintattica/atk9/src/Node.class)
+- actions: These are the registered actions for the node, if ommitted the standard action (admin, add, update, view and delete) will be used, if you need a non standard action, you have to declare all the standard action too if you need them, i.e. if you need a print_order action besides the standard ones, declare **admin, add, update, view, print_order**
+- node_flags: The node flags you want for this node (see vendor/sintattica/atk/src/Node.class)
 - show_in_menu: If this node should be shown in the menu, use false here for details nodes in master details setup.
 - attribute_type: The attribute type for the attribute, if left blank the type will be infered by Atk-Builder.
 - attribute_flags: The flags for the attribute, if left blank Atk-Builder will infer the proper flags based on the attribute name.
