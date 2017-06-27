@@ -10,7 +10,7 @@ atk-builder is a code generator tool for the ATK Framework (See https://github.c
 Create a new atk-skeleton project with:
 
 ```
-composer project-create sintattica/atk-skeleton myproject
+composer create-project sintattica/atk-skeleton myproject
 ```
 
 The run composer update with:
