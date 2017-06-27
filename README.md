@@ -6,8 +6,14 @@
 atk-builder is a code generator tool for the ATK Framework (See https://github.com/Sintattica/atk ).
 
 ### Installing
+atk-builder requiere the php-xml extension, this extension does not get installed automatically
+in ubuntu, so before it stops with an error, please execute:
 
-Create a new atk-skeleton project with:
+```
+sudo apt-get install php7.0-xml
+```
+Or follow the addecuate procedure for your operating system.
+After installing the needed extensions you can create a new project with:
 
 ```
 composer create-project sintattica/atk-skeleton myproject
