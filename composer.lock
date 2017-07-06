@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "78fa098794cf940066899c11f9d1e927",
+    "content-hash": "3e8e7bd04a6981b6364e19a97b9fabbb",
     "packages": [
         {
             "name": "pear2/console_commandline",
-            "version": "0.2.2",
+            "version": "0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear2/Console_CommandLine.git",
-                "reference": "0f4e219865e16425a2a1bed6fe307e00b992644d"
+                "reference": "002ef40e31edd0599bd157eea7661067caf9b45c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear2/Console_CommandLine/zipball/0f4e219865e16425a2a1bed6fe307e00b992644d",
-                "reference": "0f4e219865e16425a2a1bed6fe307e00b992644d",
+                "url": "https://api.github.com/repos/pear2/Console_CommandLine/zipball/002ef40e31edd0599bd157eea7661067caf9b45c",
+                "reference": "002ef40e31edd0599bd157eea7661067caf9b45c",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 "parser",
                 "pear2"
             ],
-            "time": "2016-11-09T00:10:54+00:00"
+            "time": "2017-05-22T13:01:54+00:00"
         }
     ],
     "packages-dev": [],
