@@ -1,0 +1,831 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AbstractCodeCreator	src/AbstractCodeCreator.php	/^abstract class AbstractCodeCreator$/;"	c
+AtkBuilderNode	resources/classes/AtkBuilderNode.php	/^class AtkBuilderNode extends Node$/;"	c
+AtkBuilderNode	resources/templates/AtkBuilderNode.php	/^class AtkBuilderNode extends Node$/;"	c
+BuilderDirector	src/BuilderDirector.php	/^class BuilderDirector $/;"	c
+BuilderDirector	src/InzApp.php	/^                $BuilderDirector = new BuilderDirector();$/;"	v
+BuilderDirector	src/atk-builder.php	/^    $BuilderDirector = new BuilderDirector();$/;"	v
+Config	src/Config.php	/^class Config $/;"	c
+CreateDataBase	src/AbstractCodeCreator.php	/^    public function CreateDataBase(string $dbname):bool$/;"	f
+DS	src/RunGen.php	/^define(DS, DIRECTORY_SEPARATOR);$/;"	d
+DataDictionary	src/DataDictionary.php	/^class DataDictionary$/;"	c
+DbManager	src/DbManager.php	/^class DbManager$/;"	c
+Dbsequence	resources/modules/Setup/Dbsequence.php	/^class Dbsequence extends Node$/;"	c
+DelApp	src/DelApp.php	/^class DelApp extends AbstractCodeCreator$/;"	c
+DumpDictionary	src/DataDictionary.php	/^    public function DumpDictionary()$/;"	f
+FsManager	src/FsManager.php	/^class FsManager$/;"	c
+GetDataDictionary	src/DataDictionary.php	/^    public function GetDataDictionary()$/;"	f
+InzApp	src/InzApp.php	/^class InzApp extends AbstractCodeCreator$/;"	c
+LOG_DEBUG	src/SysLogger.php	/^define("LOG_DEBUG" 	,		4);$/;"	d
+MYSQLI_ASSOC	src/DbManager.php	/^define ('MYSQLI_ASSOC', 1);$/;"	d
+MYSQLI_AUTO_INCREMENT_FLAG	src/DbManager.php	/^define ('MYSQLI_AUTO_INCREMENT_FLAG', 512);$/;"	d
+MYSQLI_BLOB_FLAG	src/DbManager.php	/^define ('MYSQLI_BLOB_FLAG', 16);$/;"	d
+MYSQLI_BOTH	src/DbManager.php	/^define ('MYSQLI_BOTH', 3);$/;"	d
+MYSQLI_CLIENT_COMPRESS	src/DbManager.php	/^define ('MYSQLI_CLIENT_COMPRESS', 32);$/;"	d
+MYSQLI_CLIENT_FOUND_ROWS	src/DbManager.php	/^define ('MYSQLI_CLIENT_FOUND_ROWS', 2);$/;"	d
+MYSQLI_CLIENT_IGNORE_SPACE	src/DbManager.php	/^define ('MYSQLI_CLIENT_IGNORE_SPACE', 256);$/;"	d
+MYSQLI_CLIENT_INTERACTIVE	src/DbManager.php	/^define ('MYSQLI_CLIENT_INTERACTIVE', 1024);$/;"	d
+MYSQLI_CLIENT_NO_SCHEMA	src/DbManager.php	/^define ('MYSQLI_CLIENT_NO_SCHEMA', 16);$/;"	d
+MYSQLI_CLIENT_SSL	src/DbManager.php	/^define ('MYSQLI_CLIENT_SSL', 2048);$/;"	d
+MYSQLI_CURSOR_TYPE_FOR_UPDATE	src/DbManager.php	/^define ('MYSQLI_CURSOR_TYPE_FOR_UPDATE', 2);$/;"	d
+MYSQLI_CURSOR_TYPE_NO_CURSOR	src/DbManager.php	/^define ('MYSQLI_CURSOR_TYPE_NO_CURSOR', 0);$/;"	d
+MYSQLI_CURSOR_TYPE_READ_ONLY	src/DbManager.php	/^define ('MYSQLI_CURSOR_TYPE_READ_ONLY', 1);$/;"	d
+MYSQLI_CURSOR_TYPE_SCROLLABLE	src/DbManager.php	/^define ('MYSQLI_CURSOR_TYPE_SCROLLABLE', 4);$/;"	d
+MYSQLI_DATA_TRUNCATED	src/DbManager.php	/^define ('MYSQLI_DATA_TRUNCATED', 101);$/;"	d
+MYSQLI_GROUP_FLAG	src/DbManager.php	/^define ('MYSQLI_GROUP_FLAG', 32768);$/;"	d
+MYSQLI_INIT_COMMAND	src/DbManager.php	/^define ('MYSQLI_INIT_COMMAND', 3);$/;"	d
+MYSQLI_MULTIPLE_KEY_FLAG	src/DbManager.php	/^define ('MYSQLI_MULTIPLE_KEY_FLAG', 8);$/;"	d
+MYSQLI_NOT_NULL_FLAG	src/DbManager.php	/^define ('MYSQLI_NOT_NULL_FLAG', 1);$/;"	d
+MYSQLI_NO_DATA	src/DbManager.php	/^define ('MYSQLI_NO_DATA', 100);$/;"	d
+MYSQLI_NUM	src/DbManager.php	/^define ('MYSQLI_NUM', 2);$/;"	d
+MYSQLI_NUM_FLAG	src/DbManager.php	/^define ('MYSQLI_NUM_FLAG', 32768);$/;"	d
+MYSQLI_OPT_CONNECT_TIMEOUT	src/DbManager.php	/^define ('MYSQLI_OPT_CONNECT_TIMEOUT', 0);$/;"	d
+MYSQLI_OPT_LOCAL_INFILE	src/DbManager.php	/^define ('MYSQLI_OPT_LOCAL_INFILE', 8);$/;"	d
+MYSQLI_PART_KEY_FLAG	src/DbManager.php	/^define ('MYSQLI_PART_KEY_FLAG', 16384);$/;"	d
+MYSQLI_PRI_KEY_FLAG	src/DbManager.php	/^define ('MYSQLI_PRI_KEY_FLAG', 2);$/;"	d
+MYSQLI_READ_DEFAULT_FILE	src/DbManager.php	/^define ('MYSQLI_READ_DEFAULT_FILE', 4);$/;"	d
+MYSQLI_READ_DEFAULT_GROUP	src/DbManager.php	/^define ('MYSQLI_READ_DEFAULT_GROUP', 5);$/;"	d
+MYSQLI_REPORT_ALL	src/DbManager.php	/^define ('MYSQLI_REPORT_ALL', 255);$/;"	d
+MYSQLI_REPORT_ERROR	src/DbManager.php	/^define ('MYSQLI_REPORT_ERROR', 1);$/;"	d
+MYSQLI_REPORT_INDEX	src/DbManager.php	/^define ('MYSQLI_REPORT_INDEX', 4);$/;"	d
+MYSQLI_REPORT_OFF	src/DbManager.php	/^define ('MYSQLI_REPORT_OFF', 0);$/;"	d
+MYSQLI_REPORT_STRICT	src/DbManager.php	/^define ('MYSQLI_REPORT_STRICT', 2);$/;"	d
+MYSQLI_RPL_ADMIN	src/DbManager.php	/^define ('MYSQLI_RPL_ADMIN', 2);$/;"	d
+MYSQLI_RPL_MASTER	src/DbManager.php	/^define ('MYSQLI_RPL_MASTER', 0);$/;"	d
+MYSQLI_RPL_SLAVE	src/DbManager.php	/^define ('MYSQLI_RPL_SLAVE', 1);$/;"	d
+MYSQLI_SET_CHARSET_NAME	src/DbManager.php	/^define ('MYSQLI_SET_CHARSET_NAME', 7);$/;"	d
+MYSQLI_SET_FLAG	src/DbManager.php	/^define ('MYSQLI_SET_FLAG', 2048);$/;"	d
+MYSQLI_STMT_ATTR_CURSOR_TYPE	src/DbManager.php	/^define ('MYSQLI_STMT_ATTR_CURSOR_TYPE', 1);$/;"	d
+MYSQLI_STMT_ATTR_PREFETCH_ROWS	src/DbManager.php	/^define ('MYSQLI_STMT_ATTR_PREFETCH_ROWS', 2);$/;"	d
+MYSQLI_STMT_ATTR_UPDATE_MAX_LENGTH	src/DbManager.php	/^define ('MYSQLI_STMT_ATTR_UPDATE_MAX_LENGTH', 0);$/;"	d
+MYSQLI_STORE_RESULT	src/DbManager.php	/^define ('MYSQLI_STORE_RESULT', 0);$/;"	d
+MYSQLI_TIMESTAMP_FLAG	src/DbManager.php	/^define ('MYSQLI_TIMESTAMP_FLAG', 1024);$/;"	d
+MYSQLI_TYPE_BIT	src/DbManager.php	/^define ('MYSQLI_TYPE_BIT', 16);$/;"	d
+MYSQLI_TYPE_BLOB	src/DbManager.php	/^define ('MYSQLI_TYPE_BLOB', 252);$/;"	d
+MYSQLI_TYPE_CHAR	src/DbManager.php	/^define ('MYSQLI_TYPE_CHAR', 1);$/;"	d
+MYSQLI_TYPE_DATE	src/DbManager.php	/^define ('MYSQLI_TYPE_DATE', 10);$/;"	d
+MYSQLI_TYPE_DATETIME	src/DbManager.php	/^define ('MYSQLI_TYPE_DATETIME', 12);$/;"	d
+MYSQLI_TYPE_DECIMAL	src/DbManager.php	/^define ('MYSQLI_TYPE_DECIMAL', 0);$/;"	d
+MYSQLI_TYPE_DOUBLE	src/DbManager.php	/^define ('MYSQLI_TYPE_DOUBLE', 5);$/;"	d
+MYSQLI_TYPE_ENUM	src/DbManager.php	/^define ('MYSQLI_TYPE_ENUM', 247);$/;"	d
+MYSQLI_TYPE_FLOAT	src/DbManager.php	/^define ('MYSQLI_TYPE_FLOAT', 4);$/;"	d
+MYSQLI_TYPE_GEOMETRY	src/DbManager.php	/^define ('MYSQLI_TYPE_GEOMETRY', 255);$/;"	d
+MYSQLI_TYPE_INT24	src/DbManager.php	/^define ('MYSQLI_TYPE_INT24', 9);$/;"	d
+MYSQLI_TYPE_INTERVAL	src/DbManager.php	/^define ('MYSQLI_TYPE_INTERVAL', 247);$/;"	d
+MYSQLI_TYPE_LONG	src/DbManager.php	/^define ('MYSQLI_TYPE_LONG', 3);$/;"	d
+MYSQLI_TYPE_LONGLONG	src/DbManager.php	/^define ('MYSQLI_TYPE_LONGLONG', 8);$/;"	d
+MYSQLI_TYPE_LONG_BLOB	src/DbManager.php	/^define ('MYSQLI_TYPE_LONG_BLOB', 251);$/;"	d
+MYSQLI_TYPE_MEDIUM_BLOB	src/DbManager.php	/^define ('MYSQLI_TYPE_MEDIUM_BLOB', 250);$/;"	d
+MYSQLI_TYPE_NEWDATE	src/DbManager.php	/^define ('MYSQLI_TYPE_NEWDATE', 14);$/;"	d
+MYSQLI_TYPE_NEWDECIMAL	src/DbManager.php	/^define ('MYSQLI_TYPE_NEWDECIMAL', 246);$/;"	d
+MYSQLI_TYPE_NULL	src/DbManager.php	/^define ('MYSQLI_TYPE_NULL', 6);$/;"	d
+MYSQLI_TYPE_SET	src/DbManager.php	/^define ('MYSQLI_TYPE_SET', 248);$/;"	d
+MYSQLI_TYPE_SHORT	src/DbManager.php	/^define ('MYSQLI_TYPE_SHORT', 2);$/;"	d
+MYSQLI_TYPE_STRING	src/DbManager.php	/^define ('MYSQLI_TYPE_STRING', 254);$/;"	d
+MYSQLI_TYPE_TIME	src/DbManager.php	/^define ('MYSQLI_TYPE_TIME', 11);$/;"	d
+MYSQLI_TYPE_TIMESTAMP	src/DbManager.php	/^define ('MYSQLI_TYPE_TIMESTAMP', 7);$/;"	d
+MYSQLI_TYPE_TINY	src/DbManager.php	/^define ('MYSQLI_TYPE_TINY', 1);$/;"	d
+MYSQLI_TYPE_TINY_BLOB	src/DbManager.php	/^define ('MYSQLI_TYPE_TINY_BLOB', 249);$/;"	d
+MYSQLI_TYPE_VAR_STRING	src/DbManager.php	/^define ('MYSQLI_TYPE_VAR_STRING', 253);$/;"	d
+MYSQLI_TYPE_YEAR	src/DbManager.php	/^define ('MYSQLI_TYPE_YEAR', 13);$/;"	d
+MYSQLI_UNIQUE_KEY_FLAG	src/DbManager.php	/^define ('MYSQLI_UNIQUE_KEY_FLAG', 4);$/;"	d
+MYSQLI_UNSIGNED_FLAG	src/DbManager.php	/^define ('MYSQLI_UNSIGNED_FLAG', 32);$/;"	d
+MYSQLI_USE_RESULT	src/DbManager.php	/^define ('MYSQLI_USE_RESULT', 1);$/;"	d
+MYSQLI_ZEROFILL_FLAG	src/DbManager.php	/^define ('MYSQLI_ZEROFILL_FLAG', 64);$/;"	d
+Module	resources/modules/Setup/Module.php	/^class Module extends \\Sintattica\\Atk\\Core\\Module$/;"	c
+NewApp	src/NewApp.php	/^class NewApp extends AbstractCodeCreator$/;"	c
+Run	src/DelApp.php	/^    public function Run()$/;"	f
+Run	src/InzApp.php	/^    public function Run()$/;"	f
+Run	src/NewApp.php	/^    public function Run()$/;"	f
+Run	src/RunGen.php	/^    public function Run()$/;"	f
+RunGen	src/RunGen.php	/^class RunGen extends AbstractCodeCreator$/;"	c
+Setup	resources/modules/Setup/Setup.php	/^  class Setup extends Node$/;"	c
+SysLogger	src/SysLogger.php	/^class SysLogger$/;"	c
+TAAPP_ID	src/DataDictionary.php	/^define('TAAPP_ID'           ,1);$/;"	d
+TAATR_DESCRIPTION	src/DataDictionary.php	/^define('TAATR_DESCRIPTION'  ,1);$/;"	d
+TAATR_ID	src/DataDictionary.php	/^define('TAATR_ID'           ,0);$/;"	d
+TAATR_PARAMS	src/DataDictionary.php	/^define('TAATR_PARAMS'       ,3);$/;"	d
+TAATR_TABS	src/DataDictionary.php	/^define('TAATR_TABS'         ,4);$/;"	d
+TAATR_TYPE	src/DataDictionary.php	/^define('TAATR_TYPE'         ,2);$/;"	d
+TADB_CHARSET	src/DataDictionary.php	/^define('TADB_CHARSET'       ,6);$/;"	d
+TADB_HOST	src/DataDictionary.php	/^define('TADB_HOST'          ,4);$/;"	d
+TADB_NAME	src/DataDictionary.php	/^define('TADB_NAME'          ,1);$/;"	d
+TADB_PASS	src/DataDictionary.php	/^define('TADB_PASS'          ,3);$/;"	d
+TADB_PORT	src/DataDictionary.php	/^define('TADB_PORT'          ,5);$/;"	d
+TADB_USER	src/DataDictionary.php	/^define('TADB_USER'          ,2);$/;"	d
+TAMOD_DESCRIPTION	src/DataDictionary.php	/^define('TAMOD_DESCRIPTION'  ,2);$/;"	d
+TAMOD_ID	src/DataDictionary.php	/^define('TAMOD_ID'           ,1);$/;"	d
+TAMOD_MENU	src/DataDictionary.php	/^define('TAMOD_MENU'         ,3);$/;"	d
+TANOD_ACTIONS	src/DataDictionary.php	/^define('TANOD_ACTIONS'      ,3);$/;"	d
+TANOD_DESCRIPTION	src/DataDictionary.php	/^define('TANOD_DESCRIPTION'  ,2);$/;"	d
+TANOD_FLAGS	src/DataDictionary.php	/^define('TANOD_FLAGS'        ,4);$/;"	d
+TANOD_ID	src/DataDictionary.php	/^define('TANOD_ID'           ,1);$/;"	d
+TANOD_INSTALLABLE	src/DataDictionary.php	/^define('TANOD_INSTALLABLE'  ,6);$/;"	d
+TANOD_NODETYPE	src/DataDictionary.php	/^define('TANOD_NODETYPE'     ,7);$/;"	d
+TANOD_NOMENU	src/DataDictionary.php	/^define('TANOD_NOMENU'       ,8);$/;"	d
+TANOD_SEARCHABLE	src/DataDictionary.php	/^define('TANOD_SEARCHABLE'   ,5);$/;"	d
+TA_DESCRIPTION	src/DataDictionary.php	/^define('TA_DESCRIPTION'     ,2);$/;"	d
+TA_FLAGS	src/DataDictionary.php	/^define('TA_FLAGS'           ,4);$/;"	d
+TA_ID	src/DataDictionary.php	/^define('TA_ID'              ,1);$/;"	d
+TA_IDX_FIELDS	src/DataDictionary.php	/^define('TA_IDX_FIELDS'      ,2);$/;"	d
+TA_MENU	src/DataDictionary.php	/^define('TA_MENU'            ,3);$/;"	d
+TA_SEARCH	src/DataDictionary.php	/^define('TA_SEARCH'          ,5);$/;"	d
+TA_TAG	src/DataDictionary.php	/^define('TA_TAG'             ,0);$/;"	d
+TA_TYPE	src/DataDictionary.php	/^define('TA_TYPE'            ,3);$/;"	d
+TBL_ALTERNATE	resources/modules/Setup/TableRenderer.php	/^  define("TBL_ALTERNATE", 4); \/\/ Should each row alternate in color? If you want to use this$/;"	d
+TBL_BOTTOM	resources/modules/Setup/TableRenderer.php	/^  define("TBL_BOTTOM",16);$/;"	d
+TBL_CENTER	resources/modules/Setup/TableRenderer.php	/^  define("TBL_CENTER", 4);$/;"	d
+TBL_DATA	resources/modules/Setup/TableRenderer.php	/^  define("TBL_DATA", TBL_HEADER|TBL_ALTERNATE); \/\/ Alias for easy rendering of data tables.$/;"	d
+TBL_FOOTER	resources/modules/Setup/TableRenderer.php	/^  define("TBL_FOOTER", 2);    \/\/ Should the last row of the table be rendered as a footer?$/;"	d
+TBL_HEADER	resources/modules/Setup/TableRenderer.php	/^  define("TBL_HEADER", 1);    \/\/ Should the first row of the table be rendered as a header?$/;"	d
+TBL_LEFT	resources/modules/Setup/TableRenderer.php	/^  define("TBL_LEFT", 1);$/;"	d
+TBL_MIDDLE	resources/modules/Setup/TableRenderer.php	/^  define("TBL_MIDDLE",32);$/;"	d
+TBL_RIGHT	resources/modules/Setup/TableRenderer.php	/^  define("TBL_RIGHT", 2);$/;"	d
+TBL_TOP	resources/modules/Setup/TableRenderer.php	/^  define("TBL_TOP",8);$/;"	d
+TableRenderer	resources/modules/Setup/TableRenderer.php	/^    function TableRenderer($flags = 0, $style='', $module='')$/;"	f
+TableRenderer	resources/modules/Setup/TableRenderer.php	/^  class TableRenderer$/;"	c
+Versioninfo	resources/modules/Setup/Versioninfo.php	/^class Versioninfo extends Node$/;"	c
+__call	src/BuilderDirector.php	/^    public function __call(string $method_name, array $arguments) $/;"	f
+__construct	resources/modules/Setup/Dbsequence.php	/^    function __construct($nodeUri, $flags=null)$/;"	f
+__construct	resources/modules/Setup/License.php	/^  function __construct($nodeUri, $flags=null)$/;"	f
+__construct	resources/modules/Setup/Setup.php	/^    function __construct()$/;"	f
+__construct	resources/modules/Setup/Versioninfo.php	/^    function __construct($nodeUri, $flags=null)$/;"	f
+__construct	src/Config.php	/^    function __construct( \\PEAR2\\Console\\CommandLine\\Result $cmdlne)$/;"	f
+__construct	src/DataDictionary.php	/^    function __construct(string $def_file, Config $config)$/;"	f
+__construct	src/DbManager.php	/^	public function __construct($dd, $config)$/;"	f
+__construct	src/DelApp.php	/^    public function __construct(array $config, string $basedir, string $appnme)$/;"	f
+__construct	src/InzApp.php	/^    public function __construct(Config $config,  string $basedir, string $appnme)$/;"	f
+__construct	src/NewApp.php	/^    public function __construct(Config $config,  string $basedir, string $appnme)$/;"	f
+__construct	src/RunGen.php	/^    public function __construct(Config $config, string $basedir, DataDictionary $dd)$/;"	f
+__construct	src/SysLogger.php	/^    public function __construct(int $loglvl)$/;"	f
+__get	src/Config.php	/^    public function __get($name) $/;"	f
+__set	src/Config.php	/^    public function __set($name, $value) $/;"	f
+_alignmentStr	resources/modules/Setup/TableRenderer.php	/^    function _alignmentStr($alignment)$/;"	f
+_classStr	resources/modules/Setup/TableRenderer.php	/^    function _classStr($class)$/;"	f
+_getIdStr	resources/modules/Setup/TableRenderer.php	/^    function _getIdStr($data)$/;"	f
+_getMaxCols	resources/modules/Setup/TableRenderer.php	/^    function _getMaxCols($data,$rownr='')$/;"	f
+_getRowClassStr	resources/modules/Setup/TableRenderer.php	/^    function _getRowClassStr($row)$/;"	f
+_getTableStyleStr	resources/modules/Setup/TableRenderer.php	/^    function _getTableStyleStr()$/;"	f
+_getTableType	src/DbManager.php	/^	function _getTableType($table)$/;"	f
+_query	src/DbManager.php	/^	protected function _query($query, $isSystemQuery)$/;"	f
+_renderBody	resources/modules/Setup/TableRenderer.php	/^    function _renderBody($data, $rowOffset = 0)$/;"	f
+_renderCell	resources/modules/Setup/TableRenderer.php	/^    function _renderCell($data, $row, $col, $type)$/;"	f
+_renderFillingCell	resources/modules/Setup/TableRenderer.php	/^    function _renderFillingCell($colspan, $type)$/;"	f
+_renderFooter	resources/modules/Setup/TableRenderer.php	/^    function _renderFooter($data, $row)$/;"	f
+_renderHeader	resources/modules/Setup/TableRenderer.php	/^    function _renderHeader($data, $row)$/;"	f
+_renderRow	resources/modules/Setup/TableRenderer.php	/^    function _renderRow($data, $row, $columntype='td')$/;"	f
+_renderTable	resources/modules/Setup/TableRenderer.php	/^    function _renderTable($data)$/;"	f
+_renderValue	resources/modules/Setup/TableRenderer.php	/^    function _renderValue($cell)$/;"	f
+_setSpan	resources/modules/Setup/TableRenderer.php	/^    function _setSpan($row,$col,$span,$type="col")$/;"	f
+_spanStr	resources/modules/Setup/TableRenderer.php	/^    function _spanStr($span)$/;"	f
+a	resources/classes/AtkBuilderNode.php	/^			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $i)),$this->admin_filters[$i][0],SessionManager::SESSION_DEFAULT,false,"class='$style'")." ";$/;"	v
+a	resources/classes/AtkBuilderNode.php	/^			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $i)),"Vista $i",SessionManager::SESSION_DEFAULT,false,"class='$style'")." ";$/;"	v
+a	resources/classes/AtkBuilderNode.php	/^			$a = Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $i)),"Vista $i",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'")." ";$/;"	v
+a	resources/classes/AtkBuilderNode.php	/^		$a = $this->getAdminFilter();$/;"	v
+a	resources/templates/AtkBuilderNode.php	/^				$a = "<b><i>".$a."<\/i><\/b>";$/;"	v
+a	resources/templates/AtkBuilderNode.php	/^			$a = href(dispatch_url($this->atknodetype(),'admin', array('filter_nbr' => $i)),$this->admin_filters[$i][0])." ";$/;"	v
+a	resources/templates/AtkBuilderNode.php	/^			$a = href(dispatch_url($this->atknodetype(),'admin', array('view_nbr' => $i)),$i)." ";$/;"	v
+a	resources/templates/AtkBuilderNode.php	/^		$a = $this->getAdminFilter();$/;"	v
+abort	src/SysLogger.php	/^    public function abort($message)$/;"	f
+action	src/RunGen.php	/^            $action = $node_def['actions'][0];$/;"	v
+action_admin	resources/classes/AtkBuilderNode.php	/^	function action_admin(&$handler, $record=null)$/;"	f
+action_admin	resources/templates/AtkBuilderNode.php	/^	function action_admin(&$handler, $record=null)$/;"	f
+action_dbcheck	resources/modules/Setup/Setup.php	/^    function action_dbcheck(&$handler)$/;"	f
+action_installdb	resources/modules/Setup/Setup.php	/^    function action_installdb(&$handler)$/;"	f
+action_intro	resources/modules/Setup/Setup.php	/^    function action_intro(&$handler)$/;"	f
+action_legacyupgrade	resources/modules/Setup/Setup.php	/^    function action_legacyupgrade(&$handler)$/;"	f
+action_upgradedb	resources/modules/Setup/Setup.php	/^    function action_upgradedb(&$handler)$/;"	f
+action_versioncheck	resources/modules/Setup/Setup.php	/^    function action_versioncheck(&$handler)$/;"	f
+action_view	resources/modules/Setup/License.php	/^  function action_view(&$handler)$/;"	f
+actionpage	resources/modules/Setup/License.php	/^      $actionpage = $this->renderActionPage("view", array($box));$/;"	v
+addAtkBuilderNode	src/InzApp.php	/^    private function addAtkBuilderNode()$/;"	f
+addColumn	resources/modules/Setup/Setup.php	/^    function addColumn($table, $col, $type, $nullable=true, $default="")$/;"	f
+addSetupModule	src/InzApp.php	/^    private function addSetupModule()$/;"	f
+adminFooter	resources/classes/AtkBuilderNode.php	/^  function adminFooter()$/;"	f
+adminFooter	resources/templates/AtkBuilderNode.php	/^  function adminFooter()$/;"	f
+adminHeader	resources/classes/AtkBuilderNode.php	/^  function adminHeader()$/;"	f
+adminHeader	resources/templates/AtkBuilderNode.php	/^  function adminHeader()$/;"	f
+after_file	src/RunGen.php	/^        $after_file=$install_dir."\/after_install.inc";$/;"	v
+alignstr	resources/modules/Setup/TableRenderer.php	/^      $alignstr = $this->_alignmentStr($this->getAlignment($row, $col));$/;"	v
+alterColumn	resources/modules/Setup/Setup.php	/^    function alterColumn($table, $col, $newname, $type, $nullable=true, $default="")$/;"	f
+appass	src/InzApp.php	/^            $this->appass="demo";$/;"	v
+appass	src/InzApp.php	/^        $this->appass = trim($this->config->cmdlne->command->options['appass']);$/;"	v
+appass	src/NewApp.php	/^            $this->appass="demo";$/;"	v
+appass	src/NewApp.php	/^        $this->appass = trim($this->config->cmdlne->command->options['appass']);$/;"	v
+appcrt	src/BuilderDirector.php	/^        $appcrt = new DelApp($base_dir, $appnme);	    $/;"	v
+appcrt	src/BuilderDirector.php	/^        $appcrt = new InzApp($config, $base_dir, $appnme);	    $/;"	v
+appcrt	src/BuilderDirector.php	/^        $appcrt = new NewApp($config, $base_dir, $appnme);	    $/;"	v
+appnme	src/BuilderDirector.php	/^        $appnme = $config->cmdlne->command->args['appnme'];		$/;"	v
+appnme	src/DelApp.php	/^        $this->appnme=$appnme;$/;"	v
+appnme	src/InzApp.php	/^        $this->appnme=$appnme;$/;"	v
+appnme	src/NewApp.php	/^        $this->appnme=$appnme;$/;"	v
+assertDatabaseNew	src/InzApp.php	/^    private function assertDatabaseNew()$/;"	f
+assertDatabaseNew	src/NewApp.php	/^    private function assertDatabaseNew()$/;"	f
+assertFileExists	src/FsManager.php	/^    public static function assertFileExists(string $file)$/;"	f
+assertFileNotExists	src/FsManager.php	/^    public static function assertFileNotExists(string $file)$/;"	f
+at_name	src/RunGen.php	/^            $at_name=trim($at_name);$/;"	v
+atkatr	src/RunGen.php	/^            $atkatr=$at_def['type']."('".$at_name."'".$sep.$params.")";$/;"	v
+attributes	resources/classes/AtkBuilderNode.php	/^		$attributes = $this->getAttributeNames();$/;"	v
+attributes	resources/templates/AtkBuilderNode.php	/^		$attributes = $this->getAttributeNames();$/;"	v
+attuse	src/RunGen.php	/^        $attuse=array('Attribute'=>'');$/;"	v
+auth_array	src/RunGen.php	/^            $auth_array="['".$auth_entries."']";$/;"	v
+auth_entries	src/RunGen.php	/^            $auth_entries=implode("', '", $node_def['actions']);$/;"	v
+autoload	src/atk-builder.php	/^  $autoload = $builder_dir.$step_back. $/;"	v
+autoload_found	src/atk-builder.php	/^    $autoload_found = true;$/;"	v
+autoload_found	src/atk-builder.php	/^$autoload_found=false;$/;"	v
+availablepatches	resources/modules/Setup/Setup.php	/^              $availablepatches = array_values($availablepatches);$/;"	v
+availablepatches	resources/modules/Setup/Setup.php	/^          $availablepatches = array();$/;"	v
+bar	resources/classes/AtkBuilderNode.php	/^		$bar=Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $prev_filter)),"<<",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'")." ";$/;"	v
+bar	resources/classes/AtkBuilderNode.php	/^		$bar=Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $prev_view)),"<<",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'")." ";$/;"	v
+bar	resources/templates/AtkBuilderNode.php	/^		$bar=href(dispatch_url($this->atknodetype(),'admin', array('filter_nbr' => $prev_filter)),"<<")." ";$/;"	v
+bar	resources/templates/AtkBuilderNode.php	/^		$bar=href(dispatch_url($this->atknodetype(),'admin', array('view_nbr' => $prev_view)),"<<")." ";$/;"	v
+base_dir	src/BuilderDirector.php	/^        $base_dir = $config->basedir;		 $/;"	v
+base_dir	src/BuilderDirector.php	/^        $base_dir = $config->basedir;$/;"	v
+base_dir	src/BuilderDirector.php	/^        $base_dir = FsManager::normalizePath($base_dir_raw);$/;"	v
+base_dir_raw	src/BuilderDirector.php	/^        $base_dir_raw = $config->cmdlne->command->options['basedir'];				$/;"	v
+basedir	src/Config.php	/^        $basedir = FsManager::normalizePath($cmdlne->command->options['basedir'] ?? getcwd());         $/;"	v
+basedir	src/DelApp.php	/^        $this->basedir=$basedir;		$/;"	v
+basedir	src/InzApp.php	/^        $this->basedir=$basedir;		$/;"	v
+basedir	src/NewApp.php	/^        $this->basedir=$basedir;		$/;"	v
+basedir	src/RunGen.php	/^        $this->basedir= getcwd();	$/;"	v
+boot	resources/modules/Setup/Module.php	/^	public function boot()$/;"	f
+box	resources/modules/Setup/License.php	/^      $box = $ui->renderBox(array("title"=>$this->text($this->m_type)." - ".$this->text($this->m_view),$/;"	v
+bt	src/SysLogger.php	/^            $bt = debug_backtrace();$/;"	v
+btn	resources/modules/Setup/Setup.php	/^          $btn = "Continue";$/;"	v
+btn	resources/modules/Setup/Setup.php	/^          $btn = "Retry";$/;"	v
+btn	resources/modules/Setup/Setup.php	/^          $btn = "Start using Application";$/;"	v
+buildModuleBase	src/RunGen.php	/^    private function buildModuleBase($module_name, $module_dir, $module_contents, $destination)$/;"	f
+buildModuleCustomFile	src/RunGen.php	/^    private function buildModuleCustomFile(string $mod_name, string $mod_dir, array $def, string $destination)$/;"	f
+buildNodeBase	src/RunGen.php	/^    private function buildNodeBase($module_name, $node_name, $node_contents, $destination)$/;"	f
+buildNodeCustom	src/RunGen.php	/^    private function buildNodeCustom($module_name,$node_name, $node_contents,$destination)$/;"	f
+builder	src/BuilderDirector.php	/^        $builder = new RunGen($config, $base_dir, $dict);$/;"	v
+builder_dir	src/atk-builder.php	/^$builder_dir = dirname(__FILE__). DIRECTORY_SEPARATOR;$/;"	v
+bytes_written	src/FsManager.php	/^        $bytes_written=file_put_contents($file_normalized, $contents);$/;"	v
+cfg	src/atk-builder.php	/^$cfg = new Config($cmdlne);$/;"	v
+charset	src/DbManager.php	/^		$charset=$this->dd['db']['charset'];$/;"	v
+checkContext	src/DataDictionary.php	/^    private function checkContext($tags)$/;"	f
+checkPreRequisites	src/NewApp.php	/^    private function checkPreRequisites()$/;"	f
+chmod	src/FsManager.php	/^            $chmod = " chmod -R ${auth} \\"$from\\" ";$/;"	v
+chmod	src/FsManager.php	/^            $chmod = " chown -R www-data:www-data \\"$from\\" ";$/;"	v
+chmod	src/FsManager.php	/^    public static function chmod(string $from, string $auth)$/;"	f
+chown	src/FsManager.php	/^            $chown = " chown -R ${own} \\"$from\\" ";$/;"	v
+chown	src/FsManager.php	/^    public static function chown(string $from, string $own)$/;"	f
+class	resources/modules/Setup/TableRenderer.php	/^        $class = "class=\\"{$this->m_style}\\"";$/;"	v
+class	resources/modules/Setup/TableRenderer.php	/^      $class    = $this->_classStr($this->getClass($row, $col));$/;"	v
+class	resources/modules/Setup/TableRenderer.php	/^      $class = $this->_getRowClassStr($row);$/;"	v
+class	resources/modules/Setup/TableRenderer.php	/^      $class = $this->_getTableStyleStr();$/;"	v
+class	resources/modules/Setup/TableRenderer.php	/^      $class = '';$/;"	v
+clearThemeCache	resources/modules/Setup/Setup.php	/^    function clearThemeCache()$/;"	f
+cmd	src/atk-builder.php	/^    $cmd = $cmdlne->command_name;$/;"	v
+cmdLineParser	src/atk-builder.php	/^$cmdLineParser = PEAR2\\Console\\CommandLine::fromXmlFile($xmlfile);$/;"	v
+cmdlne	src/atk-builder.php	/^    $cmdlne = $cmdLineParser->parse();$/;"	v
+colCount	resources/modules/Setup/TableRenderer.php	/^      $colCount = count($data);$/;"	v
+colspan	resources/modules/Setup/TableRenderer.php	/^						$colspan = isset($this->m_span[$row][$cell]['colspan']) ? $this->m_span[$row][$cell]['colspan'] : 1;$/;"	v
+columnExists	resources/modules/Setup/Setup.php	/^    function columnExists($table, $column,$type="")$/;"	f
+command	src/NewApp.php	/^        $command =  $this->composer.$/;"	v
+command	src/atk-builder.php	/^    $command = $cmd == NULL ? 'rungen': $cmd;$/;"	v
+composer	src/NewApp.php	/^            $this->composer="composer";$/;"	v
+composer	src/NewApp.php	/^            $this->composer="php composer.phar";$/;"	v
+config	src/Config.php	/^    private $config;$/;"	v
+config	src/DataDictionary.php	/^		$this->config = $config;$/;"	v
+config	src/DataDictionary.php	/^    private $config;$/;"	v
+config	src/DbManager.php	/^		$this->config=$config;$/;"	v
+config	src/DelApp.php	/^        $this->config = $config;$/;"	v
+config	src/DelApp.php	/^    private $config;$/;"	v
+config	src/InzApp.php	/^        $this->config = $config;$/;"	v
+config	src/InzApp.php	/^    public $config;$/;"	v
+config	src/NewApp.php	/^        $this->config = $config;$/;"	v
+config	src/NewApp.php	/^    public $config;$/;"	v
+config	src/RunGen.php	/^        $this->config = $config;        $/;"	v
+config	src/RunGen.php	/^    protected $config;$/;"	v
+config_contents	src/InzApp.php	/^            $config_contents =substr($config_contents, 0, $start_offset).$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "administratorpassword", $password);  $/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_accesstable", "security_accessrights");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_accountdisablefield", "disabled");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_administratorfield", "is_admin");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_emailfield", "email");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_levelfield", "group_id");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_leveltable", "Security_Users_Groups");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_userfield", "username");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_userfk", "user_id");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_usernode", "Security.Users");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "auth_usertable", "Security_Users");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "db", $this->dbname);$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "host", $this->dbhost);$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "identifier", $this->appnme);$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "password", $this->dbpass);                        $/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "securityscheme", "group");$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = $this->replace_entry($config_contents, "user", $this->dbuser);$/;"	v
+config_contents	src/InzApp.php	/^        $config_contents = FsManager::fileGetContents($config_file);$/;"	v
+config_contents	src/RunGen.php	/^        $config_contents =	substr($config_contents, 0, $start_offset).$/;"	v
+config_contents	src/RunGen.php	/^        $config_contents = FsManager::fileGetContents($config_file);$/;"	v
+config_file	src/InzApp.php	/^        $config_file = $this->full_basedir.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'atk.php';$/;"	v
+config_file	src/InzApp.php	/^        $config_file = $this->full_basedir.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'parameters.dev.php';$/;"	v
+config_file	src/RunGen.php	/^        $config_file = $this->modules_dir.DS.'..'.DS.'..'.DS.'config'.DS.'atk.php';$/;"	v
+config_modules_base_file	src/RunGen.php	/^        $config_modules_base_file=$this->modules_dir.DS."config.modules_base.inc";$/;"	v
+conn	src/AbstractCodeCreator.php	/^        $conn = mysqli_connect($this->dbhost, $this->dbuser,$this->dbpass);$/;"	v
+conn	src/AbstractCodeCreator.php	/^        $conn = new \\mysqli($this->dbhost, $this->dbuser,$this->dbpass);$/;"	v
+content	resources/modules/Setup/License.php	/^    $content="";$/;"	v
+content	src/AbstractCodeCreator.php	/^        $content = FsManager::fileGetContents($source);$/;"	v
+contents	src/AbstractCodeCreator.php	/^                $contents = str_ireplace($search, $value, $contents);$/;"	v
+contents	src/AbstractCodeCreator.php	/^        $contents = $this->interpolate($record, $contents_raw);                                $/;"	v
+contents	src/FsManager.php	/^        $contents = file_get_contents($file);       $/;"	v
+contents_raw	src/AbstractCodeCreator.php	/^        $contents_raw = $this->getResource($resource);$/;"	v
+copy	src/FsManager.php	/^        $copy = " cp -R \\"$from\\" \\"$to\\"";        $/;"	v
+copy	src/FsManager.php	/^    public static function copy(string $from, string $to)$/;"	f
+copyr	src/FsManager.php	/^    public static function copyr(string $source, string $dest): bool$/;"	f
+count	src/RunGen.php	/^            $count = $count + 10;	$/;"	v
+count	src/RunGen.php	/^        $count=10;$/;"	v
+createDefFile	src/InzApp.php	/^    private function createDefFile()$/;"	f
+createFromTemplate	src/AbstractCodeCreator.php	/^    protected  function createFromTemplate(string $resource, array $record, string $destination)$/;"	f
+cur_filter	resources/classes/AtkBuilderNode.php	/^		$cur_filter = $sessionManager->stackVar('filter_nbr');$/;"	v
+cur_filter	resources/classes/AtkBuilderNode.php	/^		$cur_filter = $this->getAdminFilter();$/;"	v
+cur_filter	resources/classes/AtkBuilderNode.php	/^		$cur_filter = 0;$/;"	v
+cur_filter	resources/templates/AtkBuilderNode.php	/^		$cur_filter = $g_sessionManager->stackVar('filter_nbr');$/;"	v
+cur_filter	resources/templates/AtkBuilderNode.php	/^		$cur_filter = $this->getAdminFilter();$/;"	v
+cur_filter	resources/templates/AtkBuilderNode.php	/^		$cur_filter = 0;$/;"	v
+cur_mod	src/DataDictionary.php	/^                $this->cur_mod=$tags[TAMOD_ID];$/;"	v
+cur_nod	src/DataDictionary.php	/^                $this->cur_nod=$tags[TANOD_ID];$/;"	v
+cur_view	resources/classes/AtkBuilderNode.php	/^			$cur_view = 0;$/;"	v
+cur_view	resources/classes/AtkBuilderNode.php	/^		$cur_view = $sessionManager->stackVar('view_nbr');$/;"	v
+cur_view	resources/classes/AtkBuilderNode.php	/^		$cur_view = $this->getAdminView();$/;"	v
+cur_view	resources/templates/AtkBuilderNode.php	/^			$cur_view = 0;$/;"	v
+cur_view	resources/templates/AtkBuilderNode.php	/^		$cur_view = $g_sessionManager->stackVar('view_nbr');$/;"	v
+cur_view	resources/templates/AtkBuilderNode.php	/^		$cur_view = $this->getAdminView();$/;"	v
+curhaltval	resources/modules/Setup/Setup.php	/^          $curhaltval = $db->m_haltonerror;$/;"	v
+curhaltval	resources/modules/Setup/Setup.php	/^      $curhaltval = $db->m_haltonerror;$/;"	v
+data	resources/modules/Setup/Setup.php	/^      $data=array();$/;"	v
+data_dict	src/RunGen.php	/^        $this->data_dict=$dd;$/;"	v
+database	src/DbManager.php	/^		$database=$this->dd['db']['dbname'];$/;"	v
+db	resources/modules/Setup/Setup.php	/^      		$db = &$this->getDb();$/;"	v
+db	resources/modules/Setup/Setup.php	/^      	$db = &$this->getDb();$/;"	v
+db	resources/modules/Setup/Setup.php	/^          $db = &$this->getDb();$/;"	v
+db	resources/modules/Setup/Setup.php	/^      $db = $this->getDb();$/;"	v
+db	resources/modules/Setup/Setup.php	/^      $db = &$this->GetDb();$/;"	v
+db	resources/modules/Setup/Setup.php	/^      $db = &$this->getDb();$/;"	v
+db	src/RunGen.php	/^        $db = new DbManager($this->dd,$this->config);	$/;"	v
+dbconfig	resources/modules/Setup/Setup.php	/^        $dbconfig = Config::getGlobal("db");$/;"	v
+dbconfig	resources/modules/Setup/Setup.php	/^      $dbconfig = Config::getGlobal("db");$/;"	v
+dbconfig	resources/modules/Setup/Setup.php	/^      $dbconfig = atkconfig("db");$/;"	v
+dbhost	src/DelApp.php	/^        $this->dbhost = trim($def_file = $this->config->cmdlne->command->options['dbhost']);$/;"	v
+dbhost	src/InzApp.php	/^        $this->dbhost = trim($this->config->cmdlne->command->options['dbhost']);$/;"	v
+dbhost	src/NewApp.php	/^        $this->dbhost = trim($this->config->cmdlne->command->options['dbhost']);$/;"	v
+dbname	src/DelApp.php	/^        $dbname=$this->dbname;$/;"	v
+dbname	src/DelApp.php	/^        $this->dbname =  trim($this->dbname) == "" ? $this->appnme:$this->dbname;$/;"	v
+dbname	src/DelApp.php	/^        $this->dbname = trim($def_file = $this->config->cmdlne->command->options['dbname']);$/;"	v
+dbname	src/InzApp.php	/^        $dbname=$this->dbname;$/;"	v
+dbname	src/InzApp.php	/^        $this->dbname = trim($this->config->cmdlne->command->options['dbname']);$/;"	v
+dbname	src/InzApp.php	/^        $this->dbname = trim($this->dbname) == "" ? $this->appnme:$this->dbname;$/;"	v
+dbname	src/NewApp.php	/^        $dbname=$this->dbname;$/;"	v
+dbname	src/NewApp.php	/^        $this->dbname = trim($this->config->cmdlne->command->options['dbname']);$/;"	v
+dbname	src/NewApp.php	/^        $this->dbname = trim($this->dbname) == "" ? $this->appnme:$this->dbname;$/;"	v
+dbpass	src/DelApp.php	/^        $this->dbpass = trim($def_file = $this->config->cmdlne->command->options['dbpass']);$/;"	v
+dbpass	src/InzApp.php	/^        $this->dbpass = trim($this->config->cmdlne->command->options['dbpass']);$/;"	v
+dbpass	src/NewApp.php	/^        $this->dbpass = trim($this->config->cmdlne->command->options['dbpass']);$/;"	v
+dbuser	src/DelApp.php	/^        $this->dbuser = trim($def_file = $this->config->cmdlne->command->options['dbuser']);$/;"	v
+dbuser	src/InzApp.php	/^        $this->dbuser = trim($this->config->cmdlne->command->options['dbuser']);$/;"	v
+dbuser	src/NewApp.php	/^        $this->dbuser = trim($this->config->cmdlne->command->options['dbuser']);$/;"	v
+dd	src/DataDictionary.php	/^    private $dd = array();$/;"	v
+dd	src/DbManager.php	/^		$this->dd=$dd;$/;"	v
+dd	src/RunGen.php	/^        $this->dd=$dd->GetDataDictionary();$/;"	v
+ddl	resources/modules/Setup/Setup.php	/^        $ddl = &$db->createDDL();$/;"	v
+ddl	resources/modules/Setup/Setup.php	/^      $ddl = &$db->createDDL();$/;"	v
+debug	src/SysLogger.php	/^    public function debug(string $message="", int $level=0)$/;"	f
+def_file	src/BuilderDirector.php	/^             $def_file = $config->cmdlne->options['deffile']; $/;"	v
+def_file	src/BuilderDirector.php	/^        $def_file = ".\/DefFile";$/;"	v
+def_file	src/BuilderDirector.php	/^        $def_file = $config->deffile;$/;"	v
+delDatabase	src/DelApp.php	/^    private function delDatabase()$/;"	f
+delapp	src/BuilderDirector.php	/^    function delapp(Config $config)$/;"	f
+deleteSkeletonModules	src/InzApp.php	/^     private function deleteSkeletonModules()$/;"	f
+deleteSkeletonProvidedSqlFile	src/InzApp.php	/^     private function deleteSkeletonProvidedSqlFile()$/;"	f
+deps	resources/modules/Setup/Setup.php	/^        $deps = $module->getDependencies(DEP_INSTALL);$/;"	v
+deps	resources/modules/Setup/Setup.php	/^      $deps = array();$/;"	v
+dict	src/BuilderDirector.php	/^        $dict = new DataDictionary($def_file, $config);$/;"	v
+diff_with_previous_version	src/RunGen.php	/^    private function diff_with_previous_version($module_name, $module_contents)$/;"	f
+dir	src/FsManager.php	/^        $dir = dir($source);$/;"	v
+doConnect	src/DbManager.php	/^	function doConnect($host, $user, $password, $database, $port, $charset)$/;"	f
+dropColumn	resources/modules/Setup/Setup.php	/^    function dropColumn($table, $col)$/;"	f
+dropNode	resources/modules/Setup/Setup.php	/^    function dropNode($node)$/;"	f
+dropSequence	resources/modules/Setup/Setup.php	/^    function dropSequence($sequence)$/;"	f
+dropTable	resources/modules/Setup/Setup.php	/^    function dropTable($table)$/;"	f
+dt	resources/modules/Setup/Setup.php	/^      $dt =  new DirectoryTraverser();$/;"	v
+dumpdd	src/BuilderDirector.php	/^    function dumpdd(Config $config)$/;"	f
+end_offset	src/InzApp.php	/^            $end_offset = strpos($config_contents, "',", $start_offset);$/;"	v
+end_offset	src/RunGen.php	/^        $end_offset = strpos($config_contents, '],', $start_offset);$/;"	v
+ensureFolderExists	src/FsManager.php	/^    public static  function ensureFolderExists(string $folder,int $auth=0774) : bool$/;"	f
+enter	src/SysLogger.php	/^    public function enter(string $message="")$/;"	f
+execSQL	src/AbstractCodeCreator.php	/^    protected function execSQL(string $query): array$/;"	f
+executeSQL	resources/modules/Setup/Setup.php	/^    function executeSQL($sql)$/;"	f
+expanded_lines	src/DataDictionary.php	/^					$expanded_lines = array_merge($expanded_lines, $new_lines);$/;"	v
+expanded_lines	src/DataDictionary.php	/^		$expanded_lines=[];$/;"	v
+extractFramework	src/NewApp.php	/^    private function extractFramework()$/;"	f
+fdict	src/DataDictionary.php	/^        $fdict=$this->getFieldDictionary();$/;"	v
+fieldnames	resources/modules/Setup/Setup.php	/^          $fieldnames = $attrib->m_refKey;$/;"	v
+fieldnames	resources/modules/Setup/Setup.php	/^          $fieldnames = array($attribname);$/;"	v
+file	src/FsManager.php	/^        $file = FsManager::normalizePath($file);$/;"	v
+file	src/InzApp.php	/^        $file=$this->full_basedir.DIRECTORY_SEPARATOR.$/;"	v
+file	src/SysLogger.php	/^            $file = basename(isset($bt[0]['file']) ? $bt[0]['file']:"?");$/;"	v
+file	src/SysLogger.php	/^            $file =basename(isset($bt[0]['file']) ? $bt[0]['file']:"?");$/;"	v
+fileExists	src/FsManager.php	/^    public static function fileExists(string $file):bool$/;"	f
+fileGetContents	src/FsManager.php	/^    public static function fileGetContents(string $file):string$/;"	f
+filePutContents	src/FsManager.php	/^    public static function filePutContents(string $file, string $contents)$/;"	f
+file_contents	src/DataDictionary.php	/^        $file_contents=file_get_contents($file);$/;"	v
+file_name	src/DataDictionary.php	/^					$file_name = $tags[1];$/;"	v
+file_normalized	src/FsManager.php	/^        $file_normalized = FsManager::normalizePath($file);$/;"	v
+filling	resources/modules/Setup/TableRenderer.php	/^      $filling = $this->m_maxWidth - ($this->_getMaxCols(array(),$row));$/;"	v
+filter_bar	resources/classes/AtkBuilderNode.php	/^		$filter_bar=$this->getAdminFilterBar();$/;"	v
+filter_bar	resources/templates/AtkBuilderNode.php	/^		$filter_bar=$this->getAdminFilterBar();$/;"	v
+finish	src/SysLogger.php	/^    public function finish(string $message="")$/;"	f
+flags	resources/modules/Setup/Setup.php	/^        $flags = 0;$/;"	v
+folder	src/FsManager.php	/^            $folder = FsManager::normalizePath($folder);$/;"	v
+folder	src/FsManager.php	/^        $folder = FsManager::normalizePath($folder);$/;"	v
+folder	src/InzApp.php	/^         $folder=$this->full_basedir.DIRECTORY_SEPARATOR.$/;"	v
+folders	src/RunGen.php	/^        $folders=array('install', 'languages', 'themes');$/;"	v
+footer	resources/modules/Setup/TableRenderer.php	/^        $footer = array_pop($data);$/;"	v
+footer_row	resources/modules/Setup/TableRenderer.php	/^        $footer_row = count($data) - 1;$/;"	v
+form	resources/modules/Setup/Setup.php	/^      $form = '<div align="left"><b>'.$title.'<\/b><br><br>';$/;"	v
+from	src/FsManager.php	/^            $from = FsManager::normalizePath($from);$/;"	v
+from	src/FsManager.php	/^        $from = FsManager::normalizePath($from);$/;"	v
+from	src/InzApp.php	/^        $from = 'templates'. \\DIRECTORY_SEPARATOR .'DefFile';        $/;"	v
+from	src/InzApp.php	/^        $from =$source.DIRECTORY_SEPARATOR.$/;"	v
+full_basedir	src/DelApp.php	/^        $this->full_basedir = FsManager::normalizePath($this->basedir.$appnme);$/;"	v
+full_basedir	src/InzApp.php	/^        $this->full_basedir = FsManager::normalizePath($this->basedir.DIRECTORY_SEPARATOR.$appnme);$/;"	v
+full_basedir	src/NewApp.php	/^        $this->full_basedir = FsManager::normalizePath($this->basedir.DIRECTORY_SEPARATOR.$appnme);$/;"	v
+function	src/SysLogger.php	/^            $function = isset($bt[1]['function']) ? $bt[1]['function']:'';$/;"	v
+g_modules	resources/modules/Setup/Setup.php	/^      $g_modules = Atk::getInstance()->g_modules;$/;"	v
+g_modules	resources/modules/Setup/Setup.php	/^      $g_modules= Atk::getInstance()->g_modules;$/;"	v
+getAdminFilter	resources/classes/AtkBuilderNode.php	/^	function getAdminFilter()$/;"	f
+getAdminFilter	resources/templates/AtkBuilderNode.php	/^	function getAdminFilter()$/;"	f
+getAdminFilterBar	resources/classes/AtkBuilderNode.php	/^	function getAdminFilterBar()$/;"	f
+getAdminFilterBar	resources/templates/AtkBuilderNode.php	/^	function getAdminFilterBar()$/;"	f
+getAdminView	resources/classes/AtkBuilderNode.php	/^	function getAdminView()$/;"	f
+getAdminView	resources/templates/AtkBuilderNode.php	/^	function getAdminView()$/;"	f
+getAdminViewBar	resources/classes/AtkBuilderNode.php	/^	function getAdminViewBar()$/;"	f
+getAdminViewBar	resources/templates/AtkBuilderNode.php	/^	function getAdminViewBar()$/;"	f
+getAlignment	resources/modules/Setup/TableRenderer.php	/^    function getAlignment($row, $col)$/;"	f
+getClass	resources/modules/Setup/TableRenderer.php	/^    function getClass($row, $col)$/;"	f
+getDbStatus	resources/modules/Setup/Setup.php	/^    function getDbStatus()$/;"	f
+getFieldDictionary	src/DataDictionary.php	/^    private function getFieldDictionary()$/;"	f
+getGenericType	src/DbManager.php	/^	function getGenericType($type)$/;"	f
+getInstalledModules	resources/modules/Setup/Setup.php	/^    function getInstalledModules()$/;"	f
+getLicenseText	resources/modules/Setup/License.php	/^  function getLicenseText()$/;"	f
+getModuleVersionNumberAndSignature	src/RunGen.php	/^    private function getModuleVersionNumberAndSignature($module_dir, $module_contents)$/;"	f
+getResource	src/AbstractCodeCreator.php	/^    protected  function getResource(string $resource): string$/;"	f
+getSpan	resources/modules/Setup/TableRenderer.php	/^    function getSpan($row,$col)$/;"	f
+getTableNames	resources/modules/Setup/Setup.php	/^    function getTableNames()$/;"	f
+get_file_lines	src/DataDictionary.php	/^    private function get_file_lines(string $file): array$/;"	f
+handleDbStatus	resources/modules/Setup/Setup.php	/^    function handleDbStatus($dbstatus)$/;"	f
+hasVersionInfo	resources/modules/Setup/Setup.php	/^    function hasVersionInfo()$/;"	f
+header	resources/modules/Setup/TableRenderer.php	/^        $header = $data[0];$/;"	v
+history	resources/modules/Setup/Setup.php	/^      $history = array("0.4", "0.6", "0.8", "0.9", "0.9.1", "0.9.2");$/;"	v
+host	src/DbManager.php	/^		$host=$this->dd['db']['host'];$/;"	v
+i	src/DbManager.php	/^			$i=$finfo->name;$/;"	v
+i	src/DbManager.php	/^		$i  = 0;$/;"	v
+id	resources/modules/Setup/TableRenderer.php	/^        $id = "id=\\"{$data['id']}\\"";$/;"	v
+id	resources/modules/Setup/TableRenderer.php	/^      $id = '';$/;"	v
+id	src/DbManager.php	/^			$id = $this->_query("SELECT * FROM `{$table}` LIMIT 1", true);$/;"	v
+id	src/DbManager.php	/^			$id = @$this->_query("SELECT * FROM `{$dbname}`.`{$tablename}` LIMIT 1", true);$/;"	v
+id	src/DbManager.php	/^		$id = @$this->_query("show tables like '{$prefix}%'; ", true);$/;"	v
+id	src/DbManager.php	/^     	$id = $this->_query("SHOW TABLE STATUS LIKE '" .$table ."'", true);$/;"	v
+idstr	resources/modules/Setup/TableRenderer.php	/^      $idstr    = $this->_getIdStr($data);$/;"	v
+includeInstallFile	resources/modules/Setup/Setup.php	/^    function includeInstallFile($modname, $installfile)$/;"	f
+initializator	src/NewApp.php	/^        $initializator = new InzApp($this->config,  $this->basedir, $this->appnme);$/;"	v
+installModule	resources/modules/Setup/Setup.php	/^    function installModule($modname, &$result, $resolvedeps=false)$/;"	f
+installNode	resources/modules/Setup/Setup.php	/^    function installNode($nodename)$/;"	f
+install_dir	src/RunGen.php	/^        $install_dir=$module_dir."\/install";$/;"	v
+install_file	src/RunGen.php	/^        $install_file=$install_dir."\/install.inc";$/;"	v
+installed_mods	resources/modules/Setup/Setup.php	/^      $installed_mods = array_keys($this->getInstalledModules());$/;"	v
+installedmodules	resources/modules/Setup/Setup.php	/^      $installedmodules = $this->getInstalledModules();$/;"	v
+installfile	resources/modules/Setup/Setup.php	/^      $installfile = Atk::getInstance()->moduleDir($modname)."install\/install.inc";$/;"	v
+installs	resources/modules/Setup/Setup.php	/^      $installs = array();$/;"	v
+interpolate	src/AbstractCodeCreator.php	/^    protected  function interpolate($record, $contents): string$/;"	f
+inzapp	src/BuilderDirector.php	/^    function inzapp(Config $config)$/;"	f
+ip	resources/modules/Setup/Setup.php	/^      	$ip=$_SERVER['REMOTE_ADDR'];$/;"	v
+ips_allowed	resources/modules/Setup/Setup.php	/^  		$ips_allowed=explode(":",Config::getGlobal("setup_allowed_ips"));$/;"	v
+key	src/DataDictionary.php	/^            $key=$this->cur_mod."__".$this->cur_nod."_id";$/;"	v
+lang_custom_file	src/RunGen.php	/^            $lang_custom_file=$module_dir.DS."languages".DS.$lng."_custom.php";$/;"	v
+lang_custom_file_contents	src/RunGen.php	/^            $lang_custom_file_contents= FsManager::fileGetContents($lang_custom_file);$/;"	v
+lang_file_base	src/RunGen.php	/^            $lang_file_base=$module_dir.DS."languages".DS.$lng.".php";						$/;"	v
+languages	src/RunGen.php	/^        $languages=$this->dd['lnglst'];	$/;"	v
+levels	src/atk-builder.php	/^$levels = 0;$/;"	v
+license	resources/modules/Setup/License.php	/^    $license = file(atkconfig("atkroot")."doc\/LICENSE");$/;"	v
+license	resources/modules/Setup/License.php	/^class license extends atkNode$/;"	c
+lines	src/DataDictionary.php	/^		$lines = $this->get_file_lines($file);$/;"	v
+lines	src/DataDictionary.php	/^        $lines=explode("\\n", $file_contents);$/;"	v
+loadDefFile	src/DataDictionary.php	/^    private function loadDefFile(string $file): bool$/;"	f
+log	src/SysLogger.php	/^    public function log(string $message="", int $level=0)$/;"	f
+loglvl	src/SysLogger.php	/^            $this->loglvl=$loglvl;		$/;"	v
+loglvl	src/SysLogger.php	/^    private $loglvl;$/;"	v
+lookupfields	resources/modules/Setup/Setup.php	/^      $lookupfields = array();$/;"	v
+m_cancontinue	resources/modules/Setup/Setup.php	/^            $this->m_cancontinue = false;$/;"	v
+m_cancontinue	resources/modules/Setup/Setup.php	/^        $this->m_cancontinue=false;$/;"	v
+m_cancontinue	resources/modules/Setup/Setup.php	/^    var $m_cancontinue = true;$/;"	v
+m_cellalignment	resources/modules/Setup/TableRenderer.php	/^    var $m_cellalignment = array();$/;"	v
+m_cellclass	resources/modules/Setup/TableRenderer.php	/^    var $m_cellclass = array();$/;"	v
+m_colalignment	resources/modules/Setup/TableRenderer.php	/^    var $m_colalignment = array();$/;"	v
+m_colclass	resources/modules/Setup/TableRenderer.php	/^    var $m_colclass = array();$/;"	v
+m_currentmodule	resources/modules/Setup/Setup.php	/^      $this->m_currentmodule = $modname;$/;"	v
+m_currentmodule	resources/modules/Setup/Setup.php	/^    var $m_currentmodule = "";$/;"	v
+m_defaultalignment	resources/modules/Setup/TableRenderer.php	/^      $this->m_defaultalignment = $alignment;$/;"	v
+m_defaultalignment	resources/modules/Setup/TableRenderer.php	/^    var $m_defaultalignment = TBL_LEFT;$/;"	v
+m_defaultclass	resources/modules/Setup/TableRenderer.php	/^      $this->m_defaultclass = $class;$/;"	v
+m_defaultclass	resources/modules/Setup/TableRenderer.php	/^    var $m_defaultclass = "";$/;"	v
+m_flags	resources/modules/Setup/TableRenderer.php	/^      $this->m_flags = $flags;$/;"	v
+m_flags	resources/modules/Setup/TableRenderer.php	/^    var $m_flags = 0;$/;"	v
+m_link_id	src/DbManager.php	/^       	$this->m_link_id = mysqli_connect($host, $user, $password, $database, $port);$/;"	v
+m_maxWidth	resources/modules/Setup/TableRenderer.php	/^      $this->m_maxWidth = $this->_getMaxCols($data);$/;"	v
+m_maxWidth	resources/modules/Setup/TableRenderer.php	/^      $this->m_maxWidth = 0; \/\/ reset$/;"	v
+m_maxWidth	resources/modules/Setup/TableRenderer.php	/^    var $m_maxWidth = 0;$/;"	v
+m_report	resources/modules/Setup/Setup.php	/^          $this->m_report = array();$/;"	v
+m_report	resources/modules/Setup/Setup.php	/^    var $m_report = array();$/;"	v
+m_resultmsg	resources/modules/Setup/Setup.php	/^    var $m_resultmsg = array("ok" => "Installation completed",$/;"	v
+m_rowalignment	resources/modules/Setup/TableRenderer.php	/^    var $m_rowalignment = array();$/;"	v
+m_rowclass	resources/modules/Setup/TableRenderer.php	/^    var $m_rowclass = array();$/;"	v
+m_span	resources/modules/Setup/TableRenderer.php	/^    var $m_span = array();$/;"	v
+m_style	resources/modules/Setup/TableRenderer.php	/^      $this->m_style = $class;$/;"	v
+m_style	resources/modules/Setup/TableRenderer.php	/^    var $m_style = '';$/;"	v
+m_tableMatrix	resources/modules/Setup/TableRenderer.php	/^		var $m_tableMatrix = null;$/;"	v
+m_tableMatrix	resources/modules/Setup/TableRenderer.php	/^	    	$this->m_tableMatrix = array();$/;"	v
+max	resources/modules/Setup/TableRenderer.php	/^					$max = max($max, max(array_keys($row)));$/;"	v
+max	resources/modules/Setup/TableRenderer.php	/^			$max = 0;$/;"	v
+max	resources/modules/Setup/TableRenderer.php	/^        $max = max(array_keys($this->m_tableMatrix[$rownr]));				$/;"	v
+max_filters	resources/classes/AtkBuilderNode.php	/^		$max_filters = count($this->admin_filters) -1;$/;"	v
+max_filters	resources/templates/AtkBuilderNode.php	/^		$max_filters = count($this->admin_filters) -1;$/;"	v
+max_views	resources/classes/AtkBuilderNode.php	/^		$max_views = count($this->admin_views) -1;$/;"	v
+max_views	resources/templates/AtkBuilderNode.php	/^		$max_views = count($this->admin_views) -1;$/;"	v
+mdir	resources/modules/Setup/Setup.php	/^								$mdir = Atk::getInstance()->moduleDir($modname);;$/;"	v
+meta	resources/modules/Setup/Setup.php	/^      $meta = $db->metadata($node->m_table, true);$/;"	v
+meta	resources/modules/Setup/Setup.php	/^      $meta = $db->metadata($table, true);$/;"	v
+metadata	src/DbManager.php	/^    function metadata($table, $full=false)$/;"	f
+metadata	src/RunGen.php	/^            $metadata = $db->metadata($table);$/;"	v
+mkdir	src/FsManager.php	/^            $mkdir = "mkdir -p \\"$folder\\"";$/;"	v
+mkdir	src/FsManager.php	/^            $mkdir = "rm -rf \\"$folder\\"";$/;"	v
+mkdir	src/FsManager.php	/^    public static function mkdir(string $folder)$/;"	f
+module	resources/modules/Setup/Module.php	/^	static $module = 'Setup';$/;"	v
+module	resources/modules/Setup/Setup.php	/^      $module = Atk::getInstance()->atkGetModule($modname);$/;"	v
+module_base_file	src/RunGen.php	/^        $module_base_file=$module_dir.DS."Module_base.php";$/;"	v
+module_custom_file	src/RunGen.php	/^        $module_custom_file=$module_dir.DS."Module.php";$/;"	v
+module_dir	src/RunGen.php	/^        $module_dir=$this->modules_dir.DS.ucfirst($module_name);	$/;"	v
+module_name	src/RunGen.php	/^        $module_name=trim($module_name);$/;"	v
+moduledir	resources/modules/Setup/Setup.php	/^				$moduledir = Atk::getInstance()->moduleDir($modname);;$/;"	v
+modules_build_config_modules_base	src/RunGen.php	/^    private function modules_build_config_modules_base()$/;"	f
+modules_build_install_inc	src/RunGen.php	/^    private function modules_build_install_inc(string $module_name, string $module_dir, array $module_contents)$/;"	f
+modules_build_language_files	src/RunGen.php	/^    private function modules_build_language_files($module_dir,  $module_contents)$/;"	f
+modules_dir	src/RunGen.php	/^        $this->modules_dir=$this->basedir.DS."src".DS."Modules";	$/;"	v
+modules_list	src/RunGen.php	/^        $modules_list="\\tApp\\\\Modules\\\\Setup\\\\Module::class,\\n";$/;"	v
+msg	src/SysLogger.php	/^            $msg=$prefix.$message."\\n";$/;"	v
+msg	src/SysLogger.php	/^        $msg=$prefix.$message."\\n";$/;"	v
+ndefse	src/RunGen.php	/^            $ndefse=', $flags';$/;"	v
+ndefse	src/RunGen.php	/^        $ndefse=', $flags | ';$/;"	v
+needle	src/InzApp.php	/^        $needle="'".$tag."' => '";$/;"	v
+needsInstall	resources/modules/Setup/Setup.php	/^    function needsInstall($modname)$/;"	f
+new_lines	src/DataDictionary.php	/^					$new_lines = $this->get_file_lines($file_name);$/;"	v
+newapp	src/BuilderDirector.php	/^    function newapp(Config $config)$/;"	f
+newrec	resources/modules/Setup/Setup.php	/^          $newrec = array("module"=>$module, "version"=>$version);$/;"	v
+next_filter	resources/classes/AtkBuilderNode.php	/^		$next_filter = ($cur_view + 1 ) > $max_filters ? 0 : $cur_filter + 1;$/;"	v
+next_filter	resources/templates/AtkBuilderNode.php	/^		$next_filter = ($cur_view + 1 ) > $max_filters ? 0 : $cur_filter + 1;$/;"	v
+next_view	resources/classes/AtkBuilderNode.php	/^		$next_view = ($cur_view + 1 ) > $max_views ? 0 : $cur_view + 1;$/;"	v
+next_view	resources/templates/AtkBuilderNode.php	/^		$next_view = ($cur_view + 1 ) > $max_views ? 0 : $cur_view + 1;$/;"	v
+node	resources/modules/Setup/Setup.php	/^      $node = &Atk::GetInstance()->atkGetNode($node);$/;"	v
+node	resources/modules/Setup/Setup.php	/^      $node = &Atk::GetInstance()->atkGetNode($nodename);$/;"	v
+node	src/RunGen.php	/^                $node = $node_def['id'];$/;"	v
+node	src/RunGen.php	/^            $node = $node_def['id'];$/;"	v
+node	src/RunGen.php	/^            $node = ucfirst($node);$/;"	v
+node	src/RunGen.php	/^            $node=preg_replace('\/^'.$module_name.'_\/', '', $table,1);$/;"	v
+node_base_file	src/RunGen.php	/^        $node_base_file=$module_dir.DS.$node_name	."_base.php";$/;"	v
+node_custom_file	src/RunGen.php	/^        $node_custom_file=$module_dir.DS.$node_name.".php";$/;"	v
+node_desc	src/RunGen.php	/^            $node_desc = $node_def['description'];$/;"	v
+node_flags	src/RunGen.php	/^        $node_flags=$node_contents['flags'];	$/;"	v
+node_label	src/RunGen.php	/^                $node_label = $node_def['description'];$/;"	v
+node_name	src/RunGen.php	/^                $node_name = $node_def['id'];				$/;"	v
+node_name	src/RunGen.php	/^        $node_name=ucfirst(trim($node_name));$/;"	v
+nodes_to_check	src/RunGen.php	/^        $nodes_to_check=array();$/;"	v
+normalizePath	src/FsManager.php	/^    public static function normalizePath(string $path): string$/;"	f
+normalized_file	src/FsManager.php	/^        $normalized_file = FsManager::normalizePath($file);$/;"	v
+ok	resources/modules/Setup/Setup.php	/^              $ok = false;$/;"	v
+ok	resources/modules/Setup/Setup.php	/^            $ok = false;$/;"	v
+ok	resources/modules/Setup/Setup.php	/^        $ok = false;$/;"	v
+ok	resources/modules/Setup/Setup.php	/^        $ok = true;$/;"	v
+ok	resources/modules/Setup/Setup.php	/^      $ok = true;$/;"	v
+orgversion	resources/modules/Setup/Setup.php	/^            $orgversion = "0.4";$/;"	v
+orgversion	resources/modules/Setup/Setup.php	/^            $orgversion = "0.6";$/;"	v
+orgversion	resources/modules/Setup/Setup.php	/^            $orgversion = "0.8";$/;"	v
+orgversion	resources/modules/Setup/Setup.php	/^            $orgversion = "0.9";$/;"	v
+orgversion	resources/modules/Setup/Setup.php	/^            $orgversion = "0.9.1";$/;"	v
+orgversion	resources/modules/Setup/Setup.php	/^          $orgversion = "";$/;"	v
+orgversion	resources/modules/Setup/Setup.php	/^      $orgversion = $this->m_postvars["orgversion"];$/;"	v
+output	resources/modules/Setup/Setup.php	/^				$output = $table->render($data, TBL_HEADER, "recordlist");$/;"	v
+output	resources/modules/Setup/Setup.php	/^        $output = "I was unable to install the system table, so I cannot continue the installation. Please verify your database setup and try again.";$/;"	v
+output	resources/modules/Setup/Setup.php	/^        $output = $this->renderResult($result);$/;"	v
+output	resources/modules/Setup/TableRenderer.php	/^      $output  = "\\n<{$type} {$idstr} {$class} {$spanstr} {$alignstr}>";$/;"	v
+output	resources/modules/Setup/TableRenderer.php	/^      $output = "\\n<table {$class}>";$/;"	v
+output	resources/modules/Setup/TableRenderer.php	/^      $output = "\\n<tr {$class}>";$/;"	v
+output	resources/modules/Setup/TableRenderer.php	/^      $output = $this->_renderTable($data);$/;"	v
+output	resources/modules/Setup/TableRenderer.php	/^      $output = '<tbody>';$/;"	v
+output	resources/modules/Setup/TableRenderer.php	/^      $output = '<tfoot>';$/;"	v
+output	resources/modules/Setup/TableRenderer.php	/^      $output = '<thead>';$/;"	v
+output	src/NewApp.php	/^            $output = array();$/;"	v
+output	src/NewApp.php	/^        $output = array();$/;"	v
+output	src/NewApp.php	/^       $output = array();$/;"	v
+page	resources/modules/Setup/License.php	/^      $page = &$this->getPage();$/;"	v
+page	resources/modules/Setup/Setup.php	/^      $page = &Page::getInstance();$/;"	v
+params	src/DataDictionary.php	/^                        $params= $params.$suggested_type['params'];$/;"	v
+params	src/DataDictionary.php	/^                $params = $tags[TAATR_PARAMS];$/;"	v
+params	src/RunGen.php	/^            $params= str_replace("A::AF_DATE_STRING", "DateAttribute::AF_DATE_STRING", $params);$/;"	v
+params	src/RunGen.php	/^            $params= str_replace("A::AF_LIST_NO_NULL_ITEM", "ListAttribute::AF_LIST_NO_NULL_ITEM", $params);$/;"	v
+params	src/RunGen.php	/^            $params= str_replace("A::AF_MANYTOONE_LAZY", "ManyToOneRelation::AF_MANYTOONE_LAZY", $params);$/;"	v
+params	src/RunGen.php	/^            $params= str_replace("A::AF_NO_NULL_ITEM", "ListAttribute::AF_LIST_NO_NULL_ITEM", $params);$/;"	v
+params	src/RunGen.php	/^            $params= str_replace("A::AF_RELATION_AUTOCOMPLETE", "ManyToOneRelation::AF_RELATION_AUTOCOMPLETE", $params);$/;"	v
+params	src/RunGen.php	/^            $params= str_replace("A::AF_RELATION_AUTOLINK", "ManyToOneRelation::AF_RELATION_AUTOLINK", $params);$/;"	v
+params	src/RunGen.php	/^            $params= str_replace("AF_", "A::AF_", $params);$/;"	v
+params	src/RunGen.php	/^            $params=$at_def['params'];$/;"	v
+parent_node	src/RunGen.php	/^        $this->parent_node="Node";$/;"	v
+password	src/DbManager.php	/^		$password=$this->dd['db']['password'];$/;"	v
+password	src/InzApp.php	/^        $password= password_hash($this->appass, PASSWORD_DEFAULT);        $/;"	v
+patch_file	src/RunGen.php	/^            $patch_file=$install_dir.DS."patch-".trim($vs['version'].".inc");$/;"	v
+patches	resources/modules/Setup/Setup.php	/^      $patches = array();$/;"	v
+patchfile	resources/modules/Setup/Setup.php	/^                $patchfile = $mdir."install\/patch-".$availablepatches[$i].".inc";$/;"	v
+patchno	resources/modules/Setup/Setup.php	/^                $patchno = substr($file, 6, -4); \/\/ Patchnumber is between 'patch-' and '.inc'$/;"	v
+path	src/FsManager.php	/^        $path=str_replace("\/",  DIRECTORY_SEPARATOR, $path);$/;"	v
+path	src/FsManager.php	/^        $path=str_replace("\/\/",  DIRECTORY_SEPARATOR, $path);$/;"	v
+path	src/FsManager.php	/^        $path=str_replace("\\\\",  DIRECTORY_SEPARATOR, $path);$/;"	v
+path	src/FsManager.php	/^        $path=str_replace("\\\\\\\\",  DIRECTORY_SEPARATOR, $path);$/;"	v
+port	src/DbManager.php	/^		$port=$this->dd['db']['port'];$/;"	v
+prefix	src/SysLogger.php	/^        $prefix="";$/;"	v
+prev_filter	resources/classes/AtkBuilderNode.php	/^		$prev_filter = ($cur_view - 1 ) < 0 ? $max_filters : $cur_filter - 1;$/;"	v
+prev_filter	resources/templates/AtkBuilderNode.php	/^		$prev_filter = ($cur_view - 1 ) < 0 ? $max_filters : $cur_filter - 1;$/;"	v
+prev_view	resources/classes/AtkBuilderNode.php	/^		$prev_view = ($cur_view - 1 ) < 0 ? $max_views : $cur_view - 1;$/;"	v
+prev_view	resources/templates/AtkBuilderNode.php	/^		$prev_view = ($cur_view - 1 ) < 0 ? $max_views : $cur_view - 1;$/;"	v
+processModule	src/RunGen.php	/^    private function processModule(string $module_name, array $module_def)$/;"	f
+processNode	src/RunGen.php	/^    private function processNode($module_dir, $module_name,  $node_name, $node_contents)$/;"	f
+putModuleVersionNumberAndSignature	src/RunGen.php	/^    private function putModuleVersionNumberAndSignature($module_dir, $vs)$/;"	f
+query	src/AbstractCodeCreator.php	/^        $query = "CREATE DATABASE $dbname;";$/;"	v
+query	src/DelApp.php	/^        $query = "DROP DATABASE ${dbname};";$/;"	v
+query	src/InzApp.php	/^        $query = "GRANT ALL ON ${dbname}.* TO `${dbname}`@`localhost` identified by '${dbname}';";$/;"	v
+query	src/InzApp.php	/^        $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '${dbname}'";$/;"	v
+query	src/NewApp.php	/^        $query = "CREATE DATABASE ${dbname};";$/;"	v
+query	src/NewApp.php	/^        $query = "GRANT ALL ON ${dbname}.* TO `${dbname}`@`localhost` identified by '${dbname}';";$/;"	v
+query	src/NewApp.php	/^        $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '${dbname}'";$/;"	v
+record	src/InzApp.php	/^        $record = array();$/;"	v
+record	src/RunGen.php	/^            $record = $this->diff_with_previous_version($module_name,$module_contents);$/;"	v
+record	src/RunGen.php	/^            $record=array();$/;"	v
+record	src/RunGen.php	/^        $record = [];$/;"	v
+record	src/RunGen.php	/^        $record=[];$/;"	v
+recs	resources/modules/Setup/Setup.php	/^        $recs = $versioninfo->select("module='".$module."'");$/;"	v
+register	resources/modules/Setup/Module.php	/^	public function register()$/;"	f
+registerStyle	resources/modules/Setup/TableRenderer.php	/^    function registerStyle($style,$module="")$/;"	f
+renameSequence	resources/modules/Setup/Setup.php	/^    function renameSequence($seq_name,$new_name)$/;"	f
+renameTable	resources/modules/Setup/Setup.php	/^    function renameTable($old, $new)$/;"	f
+render	resources/modules/Setup/TableRenderer.php	/^    function render($data, $flags=0, $style="",$module="")$/;"	f
+renderReport	resources/modules/Setup/Setup.php	/^    function renderReport(&$output)$/;"	f
+renderResult	resources/modules/Setup/Setup.php	/^    function renderResult($result)$/;"	f
+replace_entry	src/InzApp.php	/^    private function replace_entry(string $config_contents, string $tag, string $value): string$/;"	f
+report	resources/modules/Setup/Setup.php	/^    function report($progressmsg, $type="info")$/;"	f
+res	resources/modules/Setup/Setup.php	/^        $res = $db->_translateError($db->m_errno);$/;"	v
+res	resources/modules/Setup/Setup.php	/^      $res = $db->connect();$/;"	v
+res	resources/modules/Setup/Setup.php	/^      $res = $db->query($sql);$/;"	v
+res	resources/modules/Setup/Setup.php	/^      $res = $this->getDbStatus();$/;"	v
+result	resources/modules/Setup/Setup.php	/^        $result = array();$/;"	v
+result	resources/modules/Setup/Setup.php	/^      $result = array();$/;"	v
+result	src/AbstractCodeCreator.php	/^        $result = mysqli_query($query);$/;"	v
+result	src/DataDictionary.php	/^        $result=array("type" => "Attribute", "params"=>"AF_HIDE_LIST", "dbtype"=>"VARCHAR(100)");$/;"	v
+result	src/DbManager.php	/^		$result = array();$/;"	v
+result	src/DbManager.php	/^     	$result = $status != NULL && isset($status['Engine']) ? $status['Engine'] : NULL;$/;"	v
+ret	resources/modules/Setup/TableRenderer.php	/^      $ret='';$/;"	v
+return_var	src/NewApp.php	/^            $return_var = 0;$/;"	v
+return_var	src/NewApp.php	/^        $return_var = 0 ;$/;"	v
+return_var	src/NewApp.php	/^        $return_var = 0;$/;"	v
+rmdir	src/FsManager.php	/^    public static function rmdir(string $folder)$/;"	f
+row	src/AbstractCodeCreator.php	/^        $row = array();$/;"	v
+row	src/DelApp.php	/^        $row = $this->execSQL($query);$/;"	v
+row	src/InzApp.php	/^        $row = $this->execSQL($query);$/;"	v
+row	src/NewApp.php	/^        $row = $this->execSQL($query);$/;"	v
+rowCount	resources/modules/Setup/TableRenderer.php	/^      $rowCount = count($data);$/;"	v
+rowData	resources/modules/Setup/TableRenderer.php	/^        $rowData = $data[$row];$/;"	v
+rowOffset	resources/modules/Setup/TableRenderer.php	/^        $rowOffset = 1;$/;"	v
+rowOffset	resources/modules/Setup/TableRenderer.php	/^      $rowOffset=0;$/;"	v
+rows	resources/modules/Setup/Setup.php	/^          $rows = $versioninfo->select();$/;"	v
+rowspan	resources/modules/Setup/TableRenderer.php	/^						$rowspan = isset($this->m_span[$row][$cell]['rowspan']) ? $this->m_span[$row][$cell]['rowspan'] : 1;;$/;"	v
+runCodeGen	src/InzApp.php	/^    private function runCodeGen()$/;"	f
+rungen	src/BuilderDirector.php	/^    function rungen(Config  $config)$/;"	f
+s_hasversioninfo	resources/modules/Setup/Setup.php	/^        $s_hasversioninfo = (in_array("versioninfo", $tablenames));$/;"	v
+s_hasversioninfo	resources/modules/Setup/Setup.php	/^      static $s_hasversioninfo=false;$/;"	v
+sayWeAreReady	src/InzApp.php	/^    private function sayWeAreReady()$/;"	f
+script	resources/classes/AtkBuilderNode.php	/^    $script='<script type="text\/javascript" src=".\/atk\/javascript\/newwindow.js"><\/script> ';$/;"	v
+script	resources/templates/AtkBuilderNode.php	/^    $script='<script type="text\/javascript" src=".\/atk\/javascript\/newwindow.js"><\/script> ';$/;"	v
+scriptname	resources/modules/Setup/Setup.php	/^          $scriptname = "upgrade\/convert-".$history[$script]."-to-".$history[$script+1].".inc";$/;"	v
+search	src/AbstractCodeCreator.php	/^                $search= '${'.trim($field).'}';$/;"	v
+sep	src/RunGen.php	/^                $sep='';$/;"	v
+sep	src/RunGen.php	/^            $sep=', ';$/;"	v
+seq	resources/modules/Setup/Setup.php	/^      $seq = $node->m_seq;$/;"	v
+sessionManager	resources/classes/AtkBuilderNode.php	/^		$sessionManager = SessionManager::getInstance();$/;"	v
+sessionManager	resources/classes/AtkBuilderNode.php	/^		$sessionManager=  SessionManager::getInstance();$/;"	v
+setAdminFilter	resources/classes/AtkBuilderNode.php	/^	function setAdminFilter()$/;"	f
+setAdminFilter	resources/templates/AtkBuilderNode.php	/^	function setAdminFilter()$/;"	f
+setAdminView	resources/classes/AtkBuilderNode.php	/^	function setAdminView()$/;"	f
+setAdminView	resources/templates/AtkBuilderNode.php	/^	function setAdminView()$/;"	f
+setAlignment	resources/modules/Setup/TableRenderer.php	/^    function setAlignment($row, $col, $alignment)$/;"	f
+setClass	resources/modules/Setup/TableRenderer.php	/^    function setClass($row, $col, $class)$/;"	f
+setColAlignment	resources/modules/Setup/TableRenderer.php	/^    function setColAlignment($col, $alignment)$/;"	f
+setColClass	resources/modules/Setup/TableRenderer.php	/^    function setColClass($col, $class)$/;"	f
+setColSpan	resources/modules/Setup/TableRenderer.php	/^    function setColSpan($row,$col,$span)$/;"	f
+setDefaultAlignment	resources/modules/Setup/TableRenderer.php	/^    function setDefaultAlignment($alignment)$/;"	f
+setDefaultClass	resources/modules/Setup/TableRenderer.php	/^    function setDefaultClass($class)$/;"	f
+setFlag	resources/modules/Setup/TableRenderer.php	/^    function setFlag($flag)$/;"	f
+setRowAlignment	resources/modules/Setup/TableRenderer.php	/^    function setRowAlignment($row, $alignment)$/;"	f
+setRowClass	resources/modules/Setup/TableRenderer.php	/^    function setRowClass($row, $class)$/;"	f
+setRowSpan	resources/modules/Setup/TableRenderer.php	/^    function setRowSpan($row,$col,$span)$/;"	f
+setTableStyle	resources/modules/Setup/TableRenderer.php	/^    function setTableStyle($class, $module="")$/;"	f
+setVersion	resources/modules/Setup/Setup.php	/^    function setVersion($version, $module="")$/;"	f
+setup	resources/modules/Setup/Setup.php	/^          $setup = &$this;$/;"	v
+setup	resources/modules/Setup/Setup.php	/^      $setup = &$this;$/;"	v
+setupScreen	resources/modules/Setup/Setup.php	/^    function setupScreen($title, $output, $nextaction="", $params=array())$/;"	f
+sgn_file_contents	src/RunGen.php	/^        $sgn_file_contents=file_get_contents($signature_file);$/;"	v
+signature	src/RunGen.php	/^        $signature= md5(var_export($module_contents['attrs'],true));$/;"	v
+signature_file	src/RunGen.php	/^        $signature_file=$module_dir.DS."module.sgn";$/;"	v
+sizes	resources/modules/Setup/Setup.php	/^          $sizes = $attrib->dbFieldSize();$/;"	v
+sizes	resources/modules/Setup/Setup.php	/^          $sizes = array($attrib->dbFieldSize());$/;"	v
+sm	resources/modules/Setup/Setup.php	/^      $sm = SessionManager::getInstance();$/;"	v
+source	src/AbstractCodeCreator.php	/^        $source=$this->config->cpbdir.DIRECTORY_SEPARATOR.$/;"	v
+source	src/InzApp.php	/^        $source=$this->config->cpbdir.DIRECTORY_SEPARATOR.$/;"	v
+span	resources/modules/Setup/TableRenderer.php	/^      $span     = $this->getSpan($row, $col);$/;"	v
+spanstr	resources/modules/Setup/TableRenderer.php	/^      $spanstr  = $this->_spanStr($span);$/;"	v
+sql	resources/modules/Setup/Setup.php	/^        $sql = "ALTER TABLE $table ADD $col $type";$/;"	v
+sql	resources/modules/Setup/Setup.php	/^      $sql = "ALTER TABLE $old RENAME $new";$/;"	v
+sql	resources/modules/Setup/Setup.php	/^      $sql = "ALTER TABLE $table CHANGE $col $newname $type";$/;"	v
+sql	resources/modules/Setup/Setup.php	/^      $sql = "UPDATE db_sequence SET seq_name='".$new_name."'$/;"	v
+start_offset	src/InzApp.php	/^        $start_offset = strpos($config_contents, "];");$/;"	v
+start_offset	src/InzApp.php	/^        $start_offset = strpos($config_contents, $needle);$/;"	v
+start_offset	src/RunGen.php	/^        $start_offset = strpos($config_contents, "'modules' => [");$/;"	v
+startidx	resources/modules/Setup/Setup.php	/^      $startidx = array_search($orgversion, $history, true);$/;"	v
+status	src/DbManager.php	/^     	$status = @mysqli_fetch_array($id, MYSQLI_ASSOC|atkconfig("mysqlfetchmode"));$/;"	v
+step_back	src/atk-builder.php	/^$step_back='';$/;"	v
+stufftodo	resources/modules/Setup/Setup.php	/^              $stufftodo = true;$/;"	v
+stufftodo	resources/modules/Setup/Setup.php	/^          $stufftodo = true;$/;"	v
+stufftodo	resources/modules/Setup/Setup.php	/^      $stufftodo = false;$/;"	v
+style	resources/classes/AtkBuilderNode.php	/^				$style="btn btn-primary";$/;"	v
+style	resources/classes/AtkBuilderNode.php	/^				$style='btn btn-primary';$/;"	v
+style	resources/classes/AtkBuilderNode.php	/^			$style="btn btn-default";$/;"	v
+style	resources/classes/AtkBuilderNode.php	/^			$style='btn btn-default';$/;"	v
+success	src/FsManager.php	/^            $success=  mkdir($folder,true);            $/;"	v
+sugestType	src/DataDictionary.php	/^    public function sugestType($field_name)$/;"	f
+suggested_type	src/DataDictionary.php	/^                    $suggested_type =$this->sugestType($tags[TAATR_ID]);$/;"	v
+symLink	src/FsManager.php	/^    public static function symLink(string $from, string $to)$/;"	f
+tab	src/RunGen.php	/^            $tab=$at_def['tabs'];$/;"	v
+table	resources/modules/Setup/Setup.php	/^        $table = new TableRenderer(); $/;"	v
+table	resources/modules/Setup/Setup.php	/^      $table = $node->m_table;$/;"	v
+table	resources/modules/Setup/Setup.php	/^      $table = new TableRenderer();$/;"	v
+table_name	src/RunGen.php	/^                $table_name = $module_name.'_'.$node;$/;"	v
+tablenames	resources/modules/Setup/Setup.php	/^        $tablenames = $this->getTableNames();$/;"	v
+tablenames	resources/modules/Setup/Setup.php	/^      $tablenames=array();$/;"	v
+tables	resources/modules/Setup/Setup.php	/^      $tables = $db->table_names();$/;"	v
+tables	src/RunGen.php	/^        $tables = $db->tablesForPrefix($module_name);$/;"	v
+tablesForPrefix	src/DbManager.php	/^	function tablesForPrefix($prefix)$/;"	f
+tag	src/DataDictionary.php	/^        $tag=trim($tags[TA_TAG]);$/;"	v
+tags	src/DataDictionary.php	/^				$tags = explode(':',$line);$/;"	v
+tags	src/DataDictionary.php	/^                $tags = explode(':',$line);$/;"	v
+theme	resources/modules/Setup/License.php	/^      $theme = &atkTheme::getInstance();$/;"	v
+to	src/FsManager.php	/^        $to = FsManager::normalizePath($to);        $/;"	v
+to	src/FsManager.php	/^        $to = FsManager::normalizePath($to);$/;"	v
+to	src/InzApp.php	/^        $to =   $this->full_basedir.DIRECTORY_SEPARATOR.$/;"	v
+to	src/InzApp.php	/^        $to = $this->full_basedir.DIRECTORY_SEPARATOR.'DefFile';                    $/;"	v
+trace	src/Config.php	/^        $trace = debug_backtrace();$/;"	v
+type	src/DataDictionary.php	/^                    $type=$suggested_type['type'];$/;"	v
+type	src/DataDictionary.php	/^                $type= $tags[TAATR_TYPE];$/;"	v
+type	src/DbManager.php	/^		$type = strtolower($type);$/;"	v
+type	src/RunGen.php	/^                    $type= $type_a['dbtype'];$/;"	v
+type	src/RunGen.php	/^                $type = "Relations";$/;"	v
+type	src/RunGen.php	/^            $type = "Attributes";$/;"	v
+type_a	src/RunGen.php	/^                    $type_a = $this->data_dict->sugestType($attr);$/;"	v
+types	resources/modules/Setup/Setup.php	/^          $types = $attrib->dbFieldType();$/;"	v
+types	resources/modules/Setup/Setup.php	/^          $types = array($attrib->dbFieldType());$/;"	v
+ui	resources/modules/Setup/License.php	/^    $ui = &$this->getUi();$/;"	v
+ui	resources/modules/Setup/Setup.php	/^      $ui = &Ui::getInstance();$/;"	v
+unlink	src/FsManager.php	/^        $unlink = "rm  -f  \\"$file\\"";$/;"	v
+unlink	src/FsManager.php	/^    public static function unlink(string $file)$/;"	f
+updateAtkDotPhp	src/InzApp.php	/^    private function updateAtkDotPhp()$/;"	f
+updateConfig	src/RunGen.php	/^    private function updateConfig(string $modules_list)$/;"	f
+updateDependencies	src/InzApp.php	/^    private function updateDependencies()$/;"	f
+updateParametersDev	src/InzApp.php	/^    private function updateParametersDev()$/;"	f
+upgradeCheck	resources/modules/Setup/Setup.php	/^    function upgradeCheck()$/;"	f
+upgradedb	resources/modules/Setup/Setup.php	/^    function upgradedb(&$result)$/;"	f
+upgraderesult	resources/modules/Setup/Setup.php	/^      $upgraderesult = $this->upgradedb($result);$/;"	v
+user	src/DbManager.php	/^		$user=$this->dd['db']['user'];$/;"	v
+value	resources/modules/Setup/TableRenderer.php	/^          $value = $cell['value'];$/;"	v
+value	resources/modules/Setup/TableRenderer.php	/^          $value = '&nbsp;';$/;"	v
+value	resources/modules/Setup/TableRenderer.php	/^        $value = (string)$cell;$/;"	v
+value	resources/modules/Setup/TableRenderer.php	/^      $value = "";$/;"	v
+verbose	src/atk-builder.php	/^$verbose = $cmdlne->options['verbose'] ?? 0;$/;"	v
+versioninfo	resources/modules/Setup/Setup.php	/^        $versioninfo = &Atk::GetInstance()->atkGetNode("Setup.Versioninfo");$/;"	v
+view_bar	resources/classes/AtkBuilderNode.php	/^		$view_bar=$this->getAdminViewBar();$/;"	v
+view_bar	resources/templates/AtkBuilderNode.php	/^		$view_bar=$this->getAdminViewBar();$/;"	v
+visitFile	resources/modules/Setup/Setup.php	/^    function visitFile($file)$/;"	f
+vs	src/RunGen.php	/^        $vs = $this->getModuleVersionNumberAndSignature($module_dir, $module_contents);$/;"	v
+x	resources/modules/Setup/TableRenderer.php	/^						$x = $cell;$/;"	v
+xmlfile	src/atk-builder.php	/^$xmlfile = dirname(__FILE__) . $/;"	v
+y	resources/modules/Setup/TableRenderer.php	/^						$y = $row;$/;"	v

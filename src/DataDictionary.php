@@ -275,7 +275,7 @@ class DataDictionary
             list($filler, $normalized) = explode("hasmany_", $field_name);
             list($module,$node_id) = explode("__",$normalized);
             $key=$this->cur_mod."__".$this->cur_nod."_id";
-            return array("type"=>"OneToManyRelation", "params"=>"NULL,'".ucfirst($module).".".ucfirst($node_id)."','".$key."'");
+            return array("type"=>"OneToManyRelation", "params"=>"AF_HIDE_LIST,'".ucfirst($module).".".ucfirst($node_id)."','".$key."'");
         }
 
         list($module,$node_id) = explode("__",$field_name);
@@ -283,7 +283,7 @@ class DataDictionary
         {
             list($node,$id) = explode("_id", $node_id);
             return array("type"=>"ManyToOneRelation",
-                            "params"=>"AF_RELATION_AUTOCOMPLETE|AF_RELATION_AUTOLINK, '".ucfirst($module).".".ucfirst($node)."'",
+                            "params"=>"AF_RELATION_AUTOCOMPLETE|AF_RELATION_AUTOLINK|AF_HIDE_LIST, '".ucfirst($module).".".ucfirst($node)."'",
                             'dbtype'=>'bigint');
         }
         $fdict=$this->getFieldDictionary();
