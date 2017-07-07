@@ -298,7 +298,7 @@ class DataDictionary
                 }
             }
         }
-        $result=array("type" => "Attribute", "params"=>"", "dbtype"=>"VARCHAR(100)");
+        $result=array("type" => "Attribute", "params"=>"AF_HIDE_LIST", "dbtype"=>"VARCHAR(100)");
         return $result;
     }
 
@@ -323,7 +323,7 @@ class DataDictionary
                                         "fecha",
                                     ),
                         "type" =>"DateAttribute",
-                        "params" =>"AF_DATE_STRING, 'd/m/Y', 'd/m/Y', NULL, NULL",
+                        "params" =>"AF_DATE_STRING|AF_HIDE_LIST, 'd/m/Y', 'd/m/Y', NULL, NULL",
                         "dbtype" =>"DATE"
                 ),
                 array(
@@ -348,7 +348,7 @@ class DataDictionary
                                         "numero"
                         ),
                         "type" =>"NumberAttribute",
-                        "params" =>"",
+                        "params" =>"AF_HIDE_LIST",
                         "dbtype" =>"BIGINT"
                 ),
                 array(
@@ -364,7 +364,7 @@ class DataDictionary
                                         "total"
                         ),
                         "type" =>"CurrencyAttribute",
-                        "params" =>"",
+                        "params" =>"AF_HIDE_LIST",
                         "dbtype" =>"DEC(15, 2)"
                 ),
                 array(
@@ -375,7 +375,7 @@ class DataDictionary
                                         "tiempo"
                         ),
                         "type" =>"TimeAttribute",
-                        "params" =>"",
+                        "params" =>"AF_HIDE_LIST",
                         "dbtype" =>"TIME"
                 ),
                 array(
@@ -389,7 +389,7 @@ class DataDictionary
                                         "?"
                         ),
                         "type" =>"BoolAttribute",
-                        "params" =>"",
+                        "params" =>"AF_HIDE_LIST",
                         "dbtype" =>"INT(1)"
                 ),
         );
