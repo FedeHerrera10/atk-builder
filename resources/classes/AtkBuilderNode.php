@@ -5,6 +5,7 @@ namespace App\Modules;
 
 use Sintattica\Atk\Core\Node;
 use Sintattica\Atk\Core\Tools;
+use Sintattica\Atk\Utils\atkMessageQueue;
 use Sintattica\Atk\Session\SessionManager;
 use Sintattica\Atk\Attributes\Attribute as A;
 
@@ -16,7 +17,7 @@ class AtkBuilderNode extends Node
 		$filter_bar=$this->getAdminFilterBar();
 		$view_bar=$this->getAdminViewBar();
 		$script.="<br><table width=100%><tr><td width=50%>$filter_bar</td><td align=right>$view_bar</td></tr></table><br>";
-		return $script; 
+		return $script;
 	}
 
   function adminFooter()
@@ -45,7 +46,7 @@ class AtkBuilderNode extends Node
 		$bar  .= Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('filter_nbr' => $next_filter)),">>",SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'");
 		return $bar;
 	}
-	
+
 	function getAdminViewBar()
 	{
 		if ( (!isset($this->admin_views)) || (!is_array($this->admin_views)))
@@ -67,16 +68,16 @@ class AtkBuilderNode extends Node
 		$bar  .= Tools::href(Tools::dispatch_url($this->atkNodeUri(),'admin', array('view_nbr' => $next_view)),">>", SessionManager::SESSION_DEFAULT,false,"class='btn btn-default'");
 		return $bar;
 	}
-	
+
 	function getAdminView()
 	{
 		$sessionManager=  SessionManager::getInstance();
 		$cur_view = $sessionManager->stackVar('view_nbr');
 		if ($cur_view == NULL)
 			$cur_view = 0;
-		return $cur_view;	
+		return $cur_view;
 	}
-	
+
 	function getAdminFilter()
 	{
 		$sessionManager = SessionManager::getInstance();
@@ -85,33 +86,214 @@ class AtkBuilderNode extends Node
 		$cur_filter = 0;
 		return $cur_filter;
 	}
-	
+
 	function setAdminView()
 	{
 		if ( (!isset($this->admin_views)) || (!is_array($this->admin_views)))
+		{
 			return;
-		
+		}
 		$cur_view = $this->getAdminView();
 		$attributes = $this->getAttributeNames();
 		foreach ($attributes as $name)
+		{
 			$this->getAttribute($name)->addFlag(A::AF_HIDE_LIST|A::AF_FORCE_LOAD);
+		}
 		foreach ($this->admin_views[$cur_view] as $name)
+		{
 			$this->getAttribute($name)->removeFlag(A::AF_HIDE_LIST);
+		}
 	}
-	
+
 	function setAdminFilter()
 	{
 		if ( (!isset($this->admin_filters)) || (!is_array($this->admin_filters)))
+		{
 			return;
+		}
 		$cur_filter = $this->getAdminFilter();
 		$this->addFilter($this->admin_filters[$cur_filter][1]);
 	}
-	
+
 	function action_admin(&$handler, $record=null)
 	{
 		$this->setAdminView();
 		$this->setAdminFilter();
 		return $handler->action_admin($record);
+	}
+
+	/**
+	* Chain: Recovers one and just one record from a node. if expresion
+	*        is absent it yields the first record of the node.
+	*        @param String $node node name in full format "module.node"
+	*        @param String $where where expresion bear in mind fully qualify the field names
+	*               to avoid potential problems i.e. security_user.login instead of
+	*               just login.
+	*         @return Record array or false if empty result set
+	*/
+	public function dbChain($node,$where)
+	{
+		if (strpos($node,'.') === false)
+		{
+			$node=$node.'.'.$node;
+		}
+		if(is_numeric($where))
+		{
+			$where =str_replace('.','_',$node).'.id='.$where;
+		}
+		$o_node = atkGetNode($node);
+		if(!is_object($o_node))
+		{
+			throw new Exception('Not a node:'.$node);
+		}
+		$record = $o_node->selectDb($where);
+		if (count($record) <= 0)
+		{
+			return false;
+		}
+		$record[0]['node']=$node;
+		return $record[0];
+	}
+	/**
+	 * dbWrite: Adds a record to a node table.
+	 * @param: node name in full format "module.node"
+	 * @param: record array
+	 */
+	function public dbWrite($node,$record,$triggers=false)
+	{
+		if (strpos($node,'.') === false)
+		{
+			$node=$node.'.'.$node;
+		}
+		$db = $this->getDb();
+		$node = Atk::getInstance()-> atkGetNode($node);
+	  	$record['id'] = $db->nextid($node->getTable());
+	  	$db->getRow('COMMIT');
+	    $node->addDb($record,$triggers);
+	 	$db->getRow('COMMIT');
+	    return $record['id'];
+	}
+	/**
+	 * dbReadE: Recovers a set of record.
+	 *          @param string $node node name in full format
+	 *          @param string $where Where expresion bear in mind fully qualify the field names
+	 *                 to avoid potential problems i.e. security_user.login instead of
+	 *                 just login.
+	 *          @return: Record array or false if empty result set
+	 */
+	function public dbReadE($node,$where)
+	{
+		if (strpos($node,'.') === false)
+		{
+			$node=$node.'.'.$node;
+		}
+		if(is_numeric($where))
+		{
+			$where =str_replace('.','_',$node).'.id='.$where;
+		}
+		$o_node = Atk::getInstance()->atkGetNode($node);
+		if(!is_object($o_node))
+		{
+			throw new Exception('Not a node:'.$node);
+		}
+		$records = a$o_node->selectDb($where);
+		return $records;
+	}
+
+	/**
+	 *   dbUpdate: Updates a record, it uses the atkprimkey member of the
+	 *             record array to update the table. if this member is not
+	 *             present an error is thrown.
+	 *             It also uses the node member of the record array, if present
+	 *             in order to determine wich node is updating, the node can also
+	 *             be specified in the cpDbUpdate call, wich is usefull to update
+	 *             a different node that has the same structure of the record's node
+	 *             @param Array $record An array containing a record
+	 *             @param String node specification
+	 *             @return nothing
+	 */
+	function dbUpdate($record,$node=null)
+	{
+		$inc=array();
+		$has_primarykey=false;
+		$has_node=false;
+		$record_nodename='';
+		foreach($record as $key => $value)
+		{
+			if ($key == 'atkprimkey')
+			{
+				$has_primarykey= true;
+			}
+	        elseif ($key == 'node')
+	        {
+	            $has_node=true;
+				$record_nodename=$value;
+		    }
+		    else
+		    {
+				array_push($inc,$key);
+			}
+	    }
+	    if (!$has_primarykey)
+	    {
+			throw new Exception('No primary key for update');
+		}
+	    if((!$has_node) and ($node == NULL))
+	    {
+			throw new Exception('No  node to update');
+		}
+		if ($node == null)
+		{
+			$node=$record_nodename;
+		}
+		$node = Atk::getInstance()->atkGetNode($node);
+	    $node->updateDb($record, false,NULL, $inc);
+	}
+  	/**
+	 *   Display a fadding message in the header section of the node
+	 *   @param string $message The message to show
+	 *   @param string $background_color Background color
+	 *   @param string $text_color Text color
+	 */
+	public function printMessage($message, $background_color='#950000', $text_color='white',$duration='6.0')
+	{
+		$res["helplabel"] = atktext("help");
+		$msg_id="msg_".microtime();
+
+		atkMessageQueue::addMessage("<div id='".$msg_id."' style='background-color: ".$background_color.";'><b><font color='".$text_color."'>".$message."</font></b></div><script>Effect.Fade('".$msg_id."', { duration: ".$duration." });</script> "); //     FFAB35
+	}
+
+  	public function cpSqlToHtmlTable($query)
+	{
+		$db = $this->getDb();
+		$rows = $db->getRows($query);
+		$content = '<table>';
+		$content.= '<tr>';
+		foreach(array_keys($rows[0]) as $column)
+	    {
+			$column = str_replace('_',' ', $column);
+			$column =  ucwords($column);
+			$content.= '<td><b><u>'.$column.'</u></b></td>';
+		}
+    	$content.= '</tr>';
+		foreach($rows as $row)
+		{
+			$content.= '<tr>';
+			foreach($row as $key=>$value)
+			{
+				if (is_numeric($value))
+				{
+					$content.= '<td align=right>'.$value.'</td>';
+				}
+				else
+				{
+				    $content.= '<td align=left>'.$value.'</td>';
+				}
+		    }
+		    $content.= '</tr>';
+    	}
+	   	$content.='</table>';
+		return $content;
 	}
 
 }
