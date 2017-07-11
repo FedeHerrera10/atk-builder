@@ -167,11 +167,11 @@ class InzApp extends AbstractCodeCreator
         $config_contents = $this->replace_entry($config_contents, "securityscheme", "group");
         $config_contents = $this->replace_entry($config_contents, "auth_userfk", "user_id");
         $config_contents = $this->replace_entry($config_contents, "auth_usernode", "Security.Users");
-        $config_contents = $this->replace_entry($config_contents, "auth_usertable", "Security_Users");
+        $config_contents = $this->replace_entry($config_contents, "auth_usertable", "security_users");
         $config_contents = $this->replace_entry($config_contents, "auth_userfield", "username");
         $config_contents = $this->replace_entry($config_contents, "auth_emailfield", "email");
         $config_contents = $this->replace_entry($config_contents, "auth_accountdisablefield", "disabled");
-        $config_contents = $this->replace_entry($config_contents, "auth_leveltable", "Security_Users_Groups");
+        $config_contents = $this->replace_entry($config_contents, "auth_leveltable", "security_users_groups");
         $config_contents = $this->replace_entry($config_contents, "auth_levelfield", "group_id");
         $config_contents = $this->replace_entry($config_contents, "auth_accesstable", "security_accessrights");
         $config_contents = $this->replace_entry($config_contents, "auth_administratorfield", "is_admin");
