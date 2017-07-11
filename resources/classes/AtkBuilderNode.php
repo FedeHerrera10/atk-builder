@@ -11,21 +11,21 @@ use Sintattica\Atk\Attributes\Attribute as A;
 
 class AtkBuilderNode extends Node
 {
-  function adminHeader()
+	function adminHeader()
 	{
-    $script='<script type="text/javascript" src="./atk/javascript/newwindow.js"></script> ';
+		$script='<script type="text/javascript" src="./atk/javascript/newwindow.js"></script> ';
 		$filter_bar=$this->getAdminFilterBar();
 		$view_bar=$this->getAdminViewBar();
 		$script.="<br><table width=100%><tr><td width=50%>$filter_bar</td><td align=right>$view_bar</td></tr></table><br>";
 		return $script;
 	}
 
-  function adminFooter()
-  {
-    return '';
+	function adminFooter()
+  	{
+    	return '';
 	}
 
-	function getAdminFilterBar()
+	private function getAdminFilterBar()
 	{
 		if ( (!isset($this->admin_filters)) || (!is_array($this->admin_filters)))
 		return "";
@@ -47,7 +47,7 @@ class AtkBuilderNode extends Node
 		return $bar;
 	}
 
-	function getAdminViewBar()
+	private function getAdminViewBar()
 	{
 		if ( (!isset($this->admin_views)) || (!is_array($this->admin_views)))
 			return "";
@@ -69,7 +69,7 @@ class AtkBuilderNode extends Node
 		return $bar;
 	}
 
-	function getAdminView()
+	private function getAdminView()
 	{
 		$sessionManager=  SessionManager::getInstance();
 		$cur_view = $sessionManager->stackVar('view_nbr');
@@ -78,7 +78,7 @@ class AtkBuilderNode extends Node
 		return $cur_view;
 	}
 
-	function getAdminFilter()
+	private function getAdminFilter()
 	{
 		$sessionManager = SessionManager::getInstance();
 		$cur_filter = $sessionManager->stackVar('filter_nbr');
@@ -87,7 +87,7 @@ class AtkBuilderNode extends Node
 		return $cur_filter;
 	}
 
-	function setAdminView()
+	private function setAdminView()
 	{
 		if ( (!isset($this->admin_views)) || (!is_array($this->admin_views)))
 		{
@@ -105,7 +105,7 @@ class AtkBuilderNode extends Node
 		}
 	}
 
-	function setAdminFilter()
+	private function setAdminFilter()
 	{
 		if ( (!isset($this->admin_filters)) || (!is_array($this->admin_filters)))
 		{
@@ -262,8 +262,12 @@ class AtkBuilderNode extends Node
 
 		atkMessageQueue::addMessage("<div id='".$msg_id."' style='background-color: ".$background_color.";'><b><font color='".$text_color."'>".$message."</font></b></div><script>Effect.Fade('".$msg_id."', { duration: ".$duration." });</script> "); //     FFAB35
 	}
+  	/**
+	 *   Renders the result set of a query passed as string into a basic HTML table 
+	 *   @param string $query  The sql sentence to render
+	 */
 
-  	public function cpSqlToHtmlTable($query)
+  	public function queryToHtmlTable($query)
 	{
 		$db = $this->getDb();
 		$rows = $db->getRows($query);
@@ -295,7 +299,22 @@ class AtkBuilderNode extends Node
 	   	$content.='</table>';
 		return $content;
 	}
-
+ 
+	/**
+	 * Renders content in a page
+	 * @param string content Content to render
+	 * @param string title   Title for the content
+	 */
+	public function renderBox($content, $title='')
+	{
+		$ui = $this->getUi();
+		#$output= Tools::href(Tools::dispatch_url("Security.Users", "admin"),"<span class='glyphicon glyphicon-print'></span> ");
+		$box =  $ui->renderBox(array(
+            'title' => $title,
+            'content' => $content,
+        ));
+	 	$page = $this->getPage();
+        $page->addContent($box);
+	}
 }
-
 ?>
