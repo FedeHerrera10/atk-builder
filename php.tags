@@ -286,6 +286,8 @@ cmdLineParser	src/atk-builder.php	/^$cmdLineParser = PEAR2\\Console\\CommandLine
 cmdlne	src/atk-builder.php	/^    $cmdlne = $cmdLineParser->parse();$/;"	v
 colCount	resources/modules/Setup/TableRenderer.php	/^      $colCount = count($data);$/;"	v
 colspan	resources/modules/Setup/TableRenderer.php	/^						$colspan = isset($this->m_span[$row][$cell]['colspan']) ? $this->m_span[$row][$cell]['colspan'] : 1;$/;"	v
+column	resources/classes/AtkBuilderNode.php	/^			$column =  ucwords($column);$/;"	v
+column	resources/classes/AtkBuilderNode.php	/^			$column = str_replace('_',' ', $column);$/;"	v
 columnExists	resources/modules/Setup/Setup.php	/^    function columnExists($table, $column,$type="")$/;"	f
 command	src/NewApp.php	/^        $command =  $this->composer.$/;"	v
 command	src/atk-builder.php	/^    $command = $cmd == NULL ? 'rungen': $cmd;$/;"	v
@@ -330,6 +332,7 @@ config_file	src/RunGen.php	/^        $config_file = $this->modules_dir.DS.'..'.D
 config_modules_base_file	src/RunGen.php	/^        $config_modules_base_file=$this->modules_dir.DS."config.modules_base.inc";$/;"	v
 conn	src/AbstractCodeCreator.php	/^        $conn = mysqli_connect($this->dbhost, $this->dbuser,$this->dbpass);$/;"	v
 conn	src/AbstractCodeCreator.php	/^        $conn = new \\mysqli($this->dbhost, $this->dbuser,$this->dbpass);$/;"	v
+content	resources/classes/AtkBuilderNode.php	/^		$content = '<table>';$/;"	v
 content	resources/modules/Setup/License.php	/^    $content="";$/;"	v
 content	src/AbstractCodeCreator.php	/^        $content = FsManager::fileGetContents($source);$/;"	v
 contents	src/AbstractCodeCreator.php	/^                $contents = str_ireplace($search, $value, $contents);$/;"	v
@@ -341,6 +344,7 @@ copy	src/FsManager.php	/^    public static function copy(string $from, string $t
 copyr	src/FsManager.php	/^    public static function copyr(string $source, string $dest): bool$/;"	f
 count	src/RunGen.php	/^            $count = $count + 10;	$/;"	v
 count	src/RunGen.php	/^        $count=10;$/;"	v
+cpSqlToHtmlTable	resources/classes/AtkBuilderNode.php	/^  	public function cpSqlToHtmlTable($query)$/;"	f
 createDefFile	src/InzApp.php	/^    private function createDefFile()$/;"	f
 createFromTemplate	src/AbstractCodeCreator.php	/^    protected  function createFromTemplate(string $resource, array $record, string $destination)$/;"	f
 cur_filter	resources/classes/AtkBuilderNode.php	/^		$cur_filter = $sessionManager->stackVar('filter_nbr');$/;"	v
@@ -362,6 +366,7 @@ curhaltval	resources/modules/Setup/Setup.php	/^      $curhaltval = $db->m_halton
 data	resources/modules/Setup/Setup.php	/^      $data=array();$/;"	v
 data_dict	src/RunGen.php	/^        $this->data_dict=$dd;$/;"	v
 database	src/DbManager.php	/^		$database=$this->dd['db']['dbname'];$/;"	v
+db	resources/classes/AtkBuilderNode.php	/^		$db = $this->getDb();$/;"	v
 db	resources/modules/Setup/Setup.php	/^      		$db = &$this->getDb();$/;"	v
 db	resources/modules/Setup/Setup.php	/^      	$db = &$this->getDb();$/;"	v
 db	resources/modules/Setup/Setup.php	/^          $db = &$this->getDb();$/;"	v
@@ -369,6 +374,8 @@ db	resources/modules/Setup/Setup.php	/^      $db = $this->getDb();$/;"	v
 db	resources/modules/Setup/Setup.php	/^      $db = &$this->GetDb();$/;"	v
 db	resources/modules/Setup/Setup.php	/^      $db = &$this->getDb();$/;"	v
 db	src/RunGen.php	/^        $db = new DbManager($this->dd,$this->config);	$/;"	v
+dbChain	resources/classes/AtkBuilderNode.php	/^	public function dbChain($node,$where)$/;"	f
+dbUpdate	resources/classes/AtkBuilderNode.php	/^	function dbUpdate($record,$node=null)$/;"	f
 dbconfig	resources/modules/Setup/Setup.php	/^        $dbconfig = Config::getGlobal("db");$/;"	v
 dbconfig	resources/modules/Setup/Setup.php	/^      $dbconfig = Config::getGlobal("db");$/;"	v
 dbconfig	resources/modules/Setup/Setup.php	/^      $dbconfig = atkconfig("db");$/;"	v
@@ -481,6 +488,10 @@ getTableNames	resources/modules/Setup/Setup.php	/^    function getTableNames()$/
 get_file_lines	src/DataDictionary.php	/^    private function get_file_lines(string $file): array$/;"	f
 handleDbStatus	resources/modules/Setup/Setup.php	/^    function handleDbStatus($dbstatus)$/;"	f
 hasVersionInfo	resources/modules/Setup/Setup.php	/^    function hasVersionInfo()$/;"	f
+has_node	resources/classes/AtkBuilderNode.php	/^		$has_node=false;$/;"	v
+has_node	resources/classes/AtkBuilderNode.php	/^	            $has_node=true;$/;"	v
+has_primarykey	resources/classes/AtkBuilderNode.php	/^				$has_primarykey= true;$/;"	v
+has_primarykey	resources/classes/AtkBuilderNode.php	/^		$has_primarykey=false;$/;"	v
 header	resources/modules/Setup/TableRenderer.php	/^        $header = $data[0];$/;"	v
 history	resources/modules/Setup/Setup.php	/^      $history = array("0.4", "0.6", "0.8", "0.9", "0.9.1", "0.9.2");$/;"	v
 host	src/DbManager.php	/^		$host=$this->dd['db']['host'];$/;"	v
@@ -493,6 +504,7 @@ id	src/DbManager.php	/^			$id = @$this->_query("SELECT * FROM `{$dbname}`.`{$tab
 id	src/DbManager.php	/^		$id = @$this->_query("show tables like '{$prefix}%'; ", true);$/;"	v
 id	src/DbManager.php	/^     	$id = $this->_query("SHOW TABLE STATUS LIKE '" .$table ."'", true);$/;"	v
 idstr	resources/modules/Setup/TableRenderer.php	/^      $idstr    = $this->_getIdStr($data);$/;"	v
+inc	resources/classes/AtkBuilderNode.php	/^		$inc=array();$/;"	v
 includeInstallFile	resources/modules/Setup/Setup.php	/^    function includeInstallFile($modname, $installfile)$/;"	f
 initializator	src/NewApp.php	/^        $initializator = new InzApp($this->config,  $this->basedir, $this->appnme);$/;"	v
 installModule	resources/modules/Setup/Setup.php	/^    function installModule($modname, &$result, $resolvedeps=false)$/;"	f
@@ -580,6 +592,7 @@ modules_dir	src/RunGen.php	/^        $this->modules_dir=$this->basedir.DS."src".
 modules_list	src/RunGen.php	/^        $modules_list="\\tApp\\\\Modules\\\\Setup\\\\Module::class,\\n";$/;"	v
 msg	src/SysLogger.php	/^            $msg=$prefix.$message."\\n";$/;"	v
 msg	src/SysLogger.php	/^        $msg=$prefix.$message."\\n";$/;"	v
+msg_id	resources/classes/AtkBuilderNode.php	/^		$msg_id="msg_".microtime();$/;"	v
 ndefse	src/RunGen.php	/^            $ndefse=', $flags';$/;"	v
 ndefse	src/RunGen.php	/^        $ndefse=', $flags | ';$/;"	v
 needle	src/InzApp.php	/^        $needle="'".$tag."' => '";$/;"	v
@@ -591,6 +604,10 @@ next_filter	resources/classes/AtkBuilderNode.php	/^		$next_filter = ($cur_view +
 next_filter	resources/templates/AtkBuilderNode.php	/^		$next_filter = ($cur_view + 1 ) > $max_filters ? 0 : $cur_filter + 1;$/;"	v
 next_view	resources/classes/AtkBuilderNode.php	/^		$next_view = ($cur_view + 1 ) > $max_views ? 0 : $cur_view + 1;$/;"	v
 next_view	resources/templates/AtkBuilderNode.php	/^		$next_view = ($cur_view + 1 ) > $max_views ? 0 : $cur_view + 1;$/;"	v
+node	resources/classes/AtkBuilderNode.php	/^			$node=$node.'.'.$node;$/;"	v
+node	resources/classes/AtkBuilderNode.php	/^			$node=$record_nodename;$/;"	v
+node	resources/classes/AtkBuilderNode.php	/^		$node = Atk::getInstance()-> atkGetNode($node);$/;"	v
+node	resources/classes/AtkBuilderNode.php	/^		$node = Atk::getInstance()->atkGetNode($node);$/;"	v
 node	resources/modules/Setup/Setup.php	/^      $node = &Atk::GetInstance()->atkGetNode($node);$/;"	v
 node	resources/modules/Setup/Setup.php	/^      $node = &Atk::GetInstance()->atkGetNode($nodename);$/;"	v
 node	src/RunGen.php	/^                $node = $node_def['id'];$/;"	v
@@ -607,6 +624,8 @@ node_name	src/RunGen.php	/^        $node_name=ucfirst(trim($node_name));$/;"	v
 nodes_to_check	src/RunGen.php	/^        $nodes_to_check=array();$/;"	v
 normalizePath	src/FsManager.php	/^    public static function normalizePath(string $path): string$/;"	f
 normalized_file	src/FsManager.php	/^        $normalized_file = FsManager::normalizePath($file);$/;"	v
+o_node	resources/classes/AtkBuilderNode.php	/^		$o_node = Atk::getInstance()->atkGetNode($node);$/;"	v
+o_node	resources/classes/AtkBuilderNode.php	/^		$o_node = atkGetNode($node);$/;"	v
 ok	resources/modules/Setup/Setup.php	/^              $ok = false;$/;"	v
 ok	resources/modules/Setup/Setup.php	/^            $ok = false;$/;"	v
 ok	resources/modules/Setup/Setup.php	/^        $ok = false;$/;"	v
@@ -661,8 +680,11 @@ prev_filter	resources/classes/AtkBuilderNode.php	/^		$prev_filter = ($cur_view -
 prev_filter	resources/templates/AtkBuilderNode.php	/^		$prev_filter = ($cur_view - 1 ) < 0 ? $max_filters : $cur_filter - 1;$/;"	v
 prev_view	resources/classes/AtkBuilderNode.php	/^		$prev_view = ($cur_view - 1 ) < 0 ? $max_views : $cur_view - 1;$/;"	v
 prev_view	resources/templates/AtkBuilderNode.php	/^		$prev_view = ($cur_view - 1 ) < 0 ? $max_views : $cur_view - 1;$/;"	v
+printMessage	resources/classes/AtkBuilderNode.php	/^	public function printMessage($message, $background_color='#950000', $text_color='white',$duration='6.0')$/;"	f
 processModule	src/RunGen.php	/^    private function processModule(string $module_name, array $module_def)$/;"	f
 processNode	src/RunGen.php	/^    private function processNode($module_dir, $module_name,  $node_name, $node_contents)$/;"	f
+public	resources/classes/AtkBuilderNode.php	/^	function public dbReadE($node,$where)$/;"	f
+public	resources/classes/AtkBuilderNode.php	/^	function public dbWrite($node,$record,$triggers=false)$/;"	f
 putModuleVersionNumberAndSignature	src/RunGen.php	/^    private function putModuleVersionNumberAndSignature($module_dir, $vs)$/;"	f
 query	src/AbstractCodeCreator.php	/^        $query = "CREATE DATABASE $dbname;";$/;"	v
 query	src/DelApp.php	/^        $query = "DROP DATABASE ${dbname};";$/;"	v
@@ -671,11 +693,15 @@ query	src/InzApp.php	/^        $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCH
 query	src/NewApp.php	/^        $query = "CREATE DATABASE ${dbname};";$/;"	v
 query	src/NewApp.php	/^        $query = "GRANT ALL ON ${dbname}.* TO `${dbname}`@`localhost` identified by '${dbname}';";$/;"	v
 query	src/NewApp.php	/^        $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '${dbname}'";$/;"	v
+record	resources/classes/AtkBuilderNode.php	/^		$record = $o_node->selectDb($where);$/;"	v
 record	src/InzApp.php	/^        $record = array();$/;"	v
 record	src/RunGen.php	/^            $record = $this->diff_with_previous_version($module_name,$module_contents);$/;"	v
 record	src/RunGen.php	/^            $record=array();$/;"	v
 record	src/RunGen.php	/^        $record = [];$/;"	v
 record	src/RunGen.php	/^        $record=[];$/;"	v
+record_nodename	resources/classes/AtkBuilderNode.php	/^				$record_nodename=$value;$/;"	v
+record_nodename	resources/classes/AtkBuilderNode.php	/^		$record_nodename='';$/;"	v
+records	resources/classes/AtkBuilderNode.php	/^		$records = a$o_node->selectDb($where);$/;"	v
 recs	resources/modules/Setup/Setup.php	/^        $recs = $versioninfo->select("module='".$module."'");$/;"	v
 register	resources/modules/Setup/Module.php	/^	public function register()$/;"	f
 registerStyle	resources/modules/Setup/TableRenderer.php	/^    function registerStyle($style,$module="")$/;"	f
@@ -709,6 +735,7 @@ rowCount	resources/modules/Setup/TableRenderer.php	/^      $rowCount = count($da
 rowData	resources/modules/Setup/TableRenderer.php	/^        $rowData = $data[$row];$/;"	v
 rowOffset	resources/modules/Setup/TableRenderer.php	/^        $rowOffset = 1;$/;"	v
 rowOffset	resources/modules/Setup/TableRenderer.php	/^      $rowOffset=0;$/;"	v
+rows	resources/classes/AtkBuilderNode.php	/^		$rows = $db->getRows($query);$/;"	v
 rows	resources/modules/Setup/Setup.php	/^          $rows = $versioninfo->select();$/;"	v
 rowspan	resources/modules/Setup/TableRenderer.php	/^						$rowspan = isset($this->m_span[$row][$cell]['rowspan']) ? $this->m_span[$row][$cell]['rowspan'] : 1;;$/;"	v
 runCodeGen	src/InzApp.php	/^    private function runCodeGen()$/;"	f
@@ -826,6 +853,7 @@ view_bar	resources/classes/AtkBuilderNode.php	/^		$view_bar=$this->getAdminViewB
 view_bar	resources/templates/AtkBuilderNode.php	/^		$view_bar=$this->getAdminViewBar();$/;"	v
 visitFile	resources/modules/Setup/Setup.php	/^    function visitFile($file)$/;"	f
 vs	src/RunGen.php	/^        $vs = $this->getModuleVersionNumberAndSignature($module_dir, $module_contents);$/;"	v
+where	resources/classes/AtkBuilderNode.php	/^			$where =str_replace('.','_',$node).'.id='.$where;$/;"	v
 x	resources/modules/Setup/TableRenderer.php	/^						$x = $cell;$/;"	v
 xmlfile	src/atk-builder.php	/^$xmlfile = dirname(__FILE__) . $/;"	v
 y	resources/modules/Setup/TableRenderer.php	/^						$y = $row;$/;"	v

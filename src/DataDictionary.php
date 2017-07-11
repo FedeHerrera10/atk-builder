@@ -324,8 +324,22 @@ class DataDictionary
                                     ),
                         "type" =>"DateAttribute",
                         "params" =>"AF_DATE_STRING|AF_HIDE_LIST, 'd/m/Y', 'd/m/Y', NULL, NULL",
+                        "dbtype" =>"VARCHAR(50)"
+					),
+                array(
+                        "words"=>array(
+                                        "pass",
+										"passwd",
+										"password",
+										"contraseña",
+										"passphrase",
+										"clave",
+                                    ),
+                        "type" =>"PasswordAttribute",
+                        "params" =>"AF_HIDE_LIST",
                         "dbtype" =>"DATE"
                 ),
+
                 array(
                         "words"=>array(
                                         "notes",

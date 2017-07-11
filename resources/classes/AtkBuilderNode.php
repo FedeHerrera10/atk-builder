@@ -141,7 +141,7 @@ class AtkBuilderNode extends Node
 		{
 			$where =str_replace('.','_',$node).'.id='.$where;
 		}
-		$o_node = atkGetNode($node);
+		$o_node = Atk::getInstance()-> atkGetNode($node);
 		if(!is_object($o_node))
 		{
 			throw new Exception('Not a node:'.$node);
