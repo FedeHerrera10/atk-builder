@@ -387,7 +387,12 @@ class RunGen extends AbstractCodeCreator
         $record['parnde']=$node_contents['type'];
 
         $node_flags=$node_contents['flags'];	
-		
+		$node_flags_entries = explode('|', $node_flags);
+		$node_flags= 'null';
+		foreach($flag in $node_flags)
+		{
+			$node_flags.= '|' .'Node::'.$flag;
+		}
         $ndefse=', $flags | ';
         if ($node_flags =='')
         {
