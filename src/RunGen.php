@@ -389,7 +389,7 @@ class RunGen extends AbstractCodeCreator
         $node_flags=$node_contents['flags'];	
 		$node_flags_entries = explode('|', $node_flags);
 		$node_flags= 'null';
-		foreach($flag in $node_flags)
+		foreach($node_flags_entries as $flag)
 		{
 			$node_flags.= '|' .'Node::'.$flag;
 		}
