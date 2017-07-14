@@ -176,7 +176,7 @@ composer update
 composer dumpautoload
 vendor/bin/atk-builder inzapp --db-user=user --db-passwd=password
 php -S localhost:8080 -t web  
-# Open a Web Browser Log in and run setup to install/change the database
+# Open a Web Browser Log in with user administrator password demo (The provided defaults) and run setup to install/change the database
 vim DefFile //Add some defs, create new modules and nodes into the DefFile
 /vendor/bin/atk-builder
 php -s 0.0.0.0:8000 -t web //Check them out
@@ -195,3 +195,32 @@ php -s 0.0.0.0:8000 -t web //Check them out
 ```
 
 Wash, rinse and repeat until your app is good enough for prime time.
+
+
+### DefFile organization
+When several people needs to work in a project they will be editing the DefFile concurrently, it will create a large "Merging Problem" when trying to commit changes to the DefFile because everybody will have to Diff its own copy against wichever copy that got to the repository first. In order to avoid (or minimize) the described problem a DefFile can be split in several parts that can be "included" in the "main" DefFile.
+The include tag provides you with the capability of spliting a DefFile into several files, i.e.:
+```
+appnme:myapp
+db:myappdb:root:pass
+
+include:Module1DefFile
+include:Module2DefFile
+include:Module3DefFile
+
+```
+
+The included file **Module1DefFile**,**Module2DefFile** and **Module3DefFile** must reside in the same Directory of the main DefFile, each one will contain a module definition (or more it is up to you) the included DefFile are searched as is i.e.:
+
+```
+include:Module1DefFile
+```
+Will search for a file called **Module1DefFile** and
+
+```
+include:Module1DefFile.txt
+```
+
+Will search for a file called **Module1DefFile.txt** the use of extension or not is up to you.
+
+Spliting your DefFile into modules (Or another organizational unit that you deem satisfactory) will be of great help when doing team jobs.
