@@ -43,7 +43,7 @@ php -S localhost:8080 -t web
 
 ```
 Now you can point your browser to http:\\localhost:8080 and enter the aplication with user `administrator` password `demo`.
-After loggin in, please run the **Setup** option to create the required databases objects.
+After login in, please run the **Setup** option to create the required databases objects.
 
 ### How does it works?
 The idea behind atk-builder is to write the minimun possible to have a fully functional ATK application.
@@ -112,7 +112,6 @@ The full syntax of the **DefFile** is as follows:
 ```
 appnme:myapp
 db:myappdb:root:pass
-
 module:payroll
 	node:employees:[label]:[actions]:[node_flags]:[show_in_menu]
 		name:[label]:[attribute_type]:[attribute_flags]:[tab]		
@@ -134,33 +133,62 @@ A brief discussion about the parameters follows:
 After you have created you new application with:
 
 ```
-atk-builder.phar --newapp MyApp -u user -p password -b /path/for/my/new/app
+composer create-project sintattica/atk-skeleton MyApp
 ```
-
-You must edit the provided **DefFile** and Add some Modules, Nodes and attributes definitions into it, then run: 
+change into the MyApp directory with:
 
 ```
-atk-builder.phar
+cd MyApp
+```
+Add sanotto/atk-builder to your project requiremente with:
+
+```
+composer require sanotto/atk-builder
+composer update
+composer dumpautoload
+```
+When the update ends, you will need to initialize the application for atk-builder with:
+
+
+```
+vendor/bin/atk-builder inzapp --db-user=user --db-passwd=password
+```
+The initialization will:
+* Rewrite the configuration files.
+* Add a Setup Module into MyApp/src/Modules.
+* Write a Standard DefFile containing the definition for the Security Module (It will replace the security module provided by atk-skeleton)
+Now you are ready to start working ,  edit the provided **DefFile** and Add some Modules, Nodes and attributes definitions into it, then run: 
+
+```
+/vendor/bin/atk-builder
 ```
 
 Without arguments, that will trigger the **rungen** command wich will update everything, Modules, Nodes and tables,
 then you edit your **DefFile** again, add some Modules, Nodes or attributes or remove them as well, and run the generarion again.
 While you are at that, you can edit the non base classes to add validation and business logic.
-A common session will look like:
+A common development session with atk-builder will look like:
 
 ```
-atk-builder.phar --newapp MyApp -u user -p password -b /path/for/my/new/app
-cd /path/for/my/new/app
-vim DefFile //Add some defs
-atk-builder.phar
+composer create-project sintattica/atk-skeleton MyApp
+cd MyApp
+composer require sanotto/atk-builder
+composer update
+composer dumpautoload
+vendor/bin/atk-builder inzapp --db-user=user --db-passwd=password
+php -S localhost:8080 -t web  
+# Open a Web Browser Log in and run setup to install/change the database
+vim DefFile //Add some defs, create new modules and nodes into the DefFile
+/vendor/bin/atk-builder
 php -s 0.0.0.0:8000 -t web //Check them out
+# Open a Web Browser Log in and test the new modules/nodes
 vim DefFile //Add some more, update old defs
-atk-builder.phar //Update the system
-php -s 0.0.0.0:8000 -t web //Check it out
-vim src/Module/SomeNode.class //Add some business logic to a node
-php -s 0.0.0.0:8000 -t web //Test it
-vim DefFile //Add some more, update old defs
-atk-builder.phar //Update the system
+/vendor/bin/atk-builder
+php -s 0.0.0.0:8000 -t web //Check them out
+# Open a Web Browser Log in and test the new modules/nodes
+/vendor/bin/atk-builder
+php -s 0.0.0.0:8000 -t web //Check them out
+# Open a Web Browser Log in and test the new modules/nodes
+
 .
 .
 .
