@@ -85,7 +85,8 @@ class InzApp extends AbstractCodeCreator
         $to =   $this->full_basedir.DIRECTORY_SEPARATOR.
                     'src'.DIRECTORY_SEPARATOR.
                     'Modules';        
-        FsManager::copy($from, $to) ;
+        //FsManager::copy($from, $to) ;
+        FsManager::symLink($from, $to) ;
     }
     /**
      *  Deletes the two atk-skeleton provided module App y Auth
