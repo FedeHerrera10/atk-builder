@@ -224,3 +224,9 @@ include:Module1DefFile.txt
 Will search for a file called **Module1DefFile.txt** the use of extension or not is up to you.
 
 Spliting your DefFile into modules (Or another organizational unit that you deem satisfactory) will be of great help when doing team jobs.
+
+### A Note of caution about config/atk.php
+atk-builder rewrites the modules config entry.
+In order to preserve your modifications in said file, please add them **AFTER** the marker ////end-of-atk-builder-automatic-list.
+All the entries between **modules =>[** and **////end-of-atk-builder-automatic-list** will be rewritten.
+All the entries between **////end-of-atk-builder-automatic-list** and **],** will be preserved.
