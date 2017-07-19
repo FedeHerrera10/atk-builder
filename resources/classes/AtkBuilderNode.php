@@ -316,5 +316,17 @@ class AtkBuilderNode extends Node
 	 	$page = $this->getPage();
         $page->addContent($box);
 	}
+	/**Url action starting id
+	/*@param string node
+	/*@param string action
+	/*@param $record
+	*/
+	
+	public function urlToAction($node,$action,$record)
+	{
+	  $url = Tools::dispatch_url("Escuela.Alumnos","pdf", ["id" =>"{$record["id"]}", 
+	  "atkselector" => $this->getTable().".id = {$record["id"]}"]);
+	    return $url;
+	}
 }
 ?>
