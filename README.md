@@ -18,8 +18,14 @@ After installing the needed extensions you can create a new project with:
 ```
 composer create-project sintattica/atk-skeleton myproject
 ```
+This will create a new empty atk project, now we need to require the atk-builder code generator with:
 
-The run composer update with:
+```
+cd myproject
+composer require sanotto/atk-builder
+```
+
+Then run composer update with:
 
 ```
 composer update
@@ -35,7 +41,6 @@ initialize the application with:
 ```
 
 With the application initialized, you can start a local web server to serve the project with:
-
 
 ```
 cd myproject
