@@ -337,7 +337,7 @@ class DataDictionary
                                     ),
                         "type" =>"PasswordAttribute",
                         "params" =>"AF_HIDE_LIST",
-                        "dbtype" =>"DATE"
+                        "dbtype" =>"VARCHAR(50)"
                 ),
 
                 array(
