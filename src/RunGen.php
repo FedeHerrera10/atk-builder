@@ -109,10 +109,17 @@ class RunGen extends AbstractCodeCreator
         $config_file = $this->modules_dir.DS.'..'.DS.'..'.DS.'config'.DS.'atk.php';
         $config_contents = FsManager::fileGetContents($config_file);
         $start_offset = strpos($config_contents, "'modules' => [");
-        $end_offset = strpos($config_contents, '],', $start_offset);
+        $end_offset = strpos($config_contents, "////end-of-atk-builder-modules-list\n", $start_offset);
+		$marker = '';
+		if (!$end_offset)
+		{
+			$marker = "////end-of-atk-builder-modules-list\n";
+        	$end_offset = strpos($config_contents, '],', $start_offset);
+		}
         $config_contents =	substr($config_contents, 0, $start_offset).
                                                 "'modules' => [\n".
                                                 $modules_list.
+												$marker.
                                                 substr($config_contents,$end_offset);
         FsManager::filePutContents($config_file, $config_contents);
     }
